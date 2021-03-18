@@ -2,12 +2,16 @@
 <!-- @@block = main-->
 <div class="page">
 
-	<div class="slider__container slider--main" slider-main [items]="slides" (init)="onSliderInit($event)" (change)="onSliderChange($event)"><!--  [autoplay]="5000" -->
+	<div class="circle">
+		<img src="img/circle.png" />
+	</div>
+
+	<div class="slider__container slider--main" slider-main [items]="slides" (init)="onSliderInit($event)" (change)="onSliderChange($event)" (subChange)="onSubSliderChange($event)"><!--  [autoplay]="5000" -->
 		<div class="slider__wrapper" [style]="wrapperStyle">
 			<div class="slider__inner" [style]="innerStyle">
 				<div class="slider__slide" *for="let item of items; let index = index;">
 					<div class="view view--clients" view-clients [item]="item" *if="!item.hidden && item.template == 'clients'"></div>
-					<div class="view view--group" view-group [item]="item" *if="!item.hidden && item.template == 'group'"></div>
+					<div class="view view--group" view-group [item]="item" (init)="onSubSliderInit($event, item)" (change)="onSubSliderChange($event)" *if="!item.hidden && item.template == 'group'"></div>
 					<div class="view view--suite" view-suite [item]="item" *if="!item.hidden && item.template == 'suite'"></div>
 					<div class="view view--tabs" view-tabs [item]="item" *if="!item.hidden && item.template == 'tabs'"></div>
 					<div class="view view--text-center" view-text-center [item]="item" *if="!item.hidden && item.template == 'textCenter'"></div>
@@ -20,8 +24,14 @@
 				</div>
 			</div>
 		</div>
+		<div *for="let item of items; let index = index;">
+			<div class="slider__bullets" [class]="{ 'enter': index === current }" *if="item.subSlider">
+				<span class="slider__bullet" *for="let slide of item.subSlider.items; let subSliderIndex = index;" [class]="{ active: subSliderIndex === item.subSlider.current }" (click)="item.subSlider.navTo(subSliderIndex)"></span>
+			</div>
+		</div>
+		<!--
 		<div class="slider__bullets">
-			<span class="slider__bullet" [class]="{ active: index === current }" *for="let item of items; let index = index;" (click)="navTo(index)"></span>
+			<span class="slider__bullet" *for="let item of items; let index = index;" [class]="{ active: index === current }" (click)="navTo(index)"></span>
 		</div>
 		<div class="slider__pagination" appear-stagger>
 			<div class="group--right">
@@ -33,6 +43,7 @@
 				</button>
 			</div>
 		</div>
+		-->
 	</div>
 	<!--
 		https://stock.adobe.com/it/images/map-of-world/4541070

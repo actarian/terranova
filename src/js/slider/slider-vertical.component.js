@@ -9,7 +9,12 @@ export default class SliderVerticalComponent extends SliderComponent {
 	set current(current) { this.setCurrent(current); }
 
 	get wrapperStyle() {
-		return { 'transform': `translate3d(0, ${-this.slideHeight * this.current}px, 0)` };
+		const style = { 'transform': `translate3d(0, ${-this.slideHeight * this.current}px, 0)` };
+		if (this.immediate) {
+			style.transition = 'none';
+		}
+		// console.log('SliderVerticalComponent', style.transition);
+		return style;
 	}
 
 	get innerStyle() {
@@ -44,13 +49,13 @@ export default class SliderVerticalComponent extends SliderComponent {
 		node.classList.remove('content-over');
 	}
 
-	navTo(current) {
-		super.navTo(current);
+	navTo(current, immediate) {
+		super.navTo(current, immediate);
 	}
 }
 
 SliderVerticalComponent.meta = {
 	selector: '[slider-vertical]',
 	inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical', 'disabled'],
-	outputs: ['change', 'tween', 'init'],
+	outputs: ['init', 'change'],
 };

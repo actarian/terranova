@@ -30,9 +30,10 @@ export default class KeyboardService {
 					const keys = this.keys;
 					keys.originalEvent = event;
 					if (event.type === 'keydown') {
-						keys[event.key] = true;
+						// console.log(event.key, event.code);
+						keys[event.code] = true;
 					} else {
-						delete keys[event.key];
+						delete keys[event.code];
 					}
 					return this.keys;
 				}),

@@ -3,27 +3,32 @@ import { Component } from 'rxcomp';
 export default class ViewGroupComponent extends Component {
 
 	onInit() {
-		console.log('ViewGroupComponent');
+		// console.log('ViewGroupComponent');
 		this.current = 0;
 	}
 
-	onChange(index) {
+	onSliderChange(index) {
 		this.current = index;
 		this.pushChanges();
+		this.change.next(index);
+	}
+
+	onSliderInit(slider) {
+		this.init.next(slider);
 	}
 
 	get isNegative() {
 		const currentItem = this.item.items[this.current];
 		return currentItem.image != null && currentItem.template !== 'textMap';
 	}
-
 }
 
 ViewGroupComponent.meta = {
 	selector: '[view-group]',
 	inputs: ['item'],
+	outputs: ['init', 'change'],
 	template: /* html */ `
-		<div class="slider__container slider--vertical" [class]="{ 'negative': isNegative }" (change)="onChange($event)" slider-vertical [vertical]="true" [items]="item.items" *if="item.template == 'group'">
+		<div class="slider__container slider--vertical" [class]="{ 'negative': isNegative }" (init)="onSliderInit($event)" (change)="onSliderChange($event)" slider-vertical [vertical]="true" [items]="item.items" *if="item.template == 'group'">
 			<div class="slider__wrapper" [style]="wrapperStyle">
 				<div class="slider__inner" [style]="innerStyle">
 					<div class="slider__slide" *for="let slide of items; let index = index;">

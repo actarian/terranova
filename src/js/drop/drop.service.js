@@ -11,7 +11,7 @@ export class DropService {
 			const body = document.querySelector('body');
 			return merge(fromEvent(body, 'drop'), fromEvent(body, 'dragover')).pipe(
 				map((event) => {
-					console.log('DropService.drop$', event);
+					// console.log('DropService.drop$', event);
 					event.preventDefault();
 					if (event.target === input) {
 						input.files = event.dataTransfer.files;

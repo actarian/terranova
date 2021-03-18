@@ -250,7 +250,9 @@ export default class SliderComponent extends Component {
 	setActiveState() {
 		const current = this.current;
 		const { node } = getContext(this);
-		const slides = Array.prototype.slice.call(node.querySelectorAll('.slider__slide'));
+		const wrapper = node.firstElementChild;
+		const inner = wrapper.firstElementChild;
+		const slides = Array.prototype.slice.call(inner.children);
 		slides.forEach((slide, i) => {
 			if (i === current) {
 				slide.classList.add('active');
@@ -258,6 +260,7 @@ export default class SliderComponent extends Component {
 				slide.classList.remove('active');
 			}
 		});
+		// console.log('setActiveState', current, node);
 	}
 
 	checkAutoplay() {
@@ -429,11 +432,13 @@ export default class SliderComponent extends Component {
 		}
 	}
 
-	navTo(current) {
+	navTo(current, immediate) {
 		current = (current > 0 ? current : this.items.length + current) % this.items.length;
+		this.immediate = immediate;
 		this.setCurrent(current);
 		this.userGesture = true;
 		this.pushChanges();
+		this.immediate = false;
 	}
 
 	hasPrev() {
@@ -464,5 +469,5 @@ export default class SliderComponent extends Component {
 SliderComponent.meta = {
 	selector: '[slider]',
 	inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical'],
-	outputs: ['change', 'tween', 'init'],
+	outputs: ['init', 'change'],
 };

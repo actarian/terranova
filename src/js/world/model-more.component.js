@@ -257,7 +257,7 @@ export default class ModelMoreComponent extends ModelComponent {
 				/*
 				child.on('down', () => {
 					this.onClipToggle();
-					console.log('onDown');
+					// console.log('onDown');
 				});
 				*/
 			}

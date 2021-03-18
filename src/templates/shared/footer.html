@@ -1,8 +1,8 @@
 <!-- footer -->
-<div class="footer__menu" footer-menu [slides]="slides" (nav)="onMenuNav($event)" *if="showMenu"></div>
+<div class="footer__menu" [class]="{ active: showMenu }" footer-menu [slides]="slides" (nav)="onMenuNav($event)"></div>
 <footer class="footer">
 	<div class="group--left">
-		<img src="img/logo.png" title="Terranova" (click)="onNavToChapter(0)" />
+		<img class="logo" src="img/logo.png" title="Terranova" (click)="onNavToChapter(0)" />
 	</div>
 	<div class="group--center">
 		<button type="button" class="btn--menu" (click)="onToggleMenu()">

@@ -194,3 +194,61 @@ $menu-height: 60px;
 		}
 	}
 }
+
+.slider--main {
+
+	.slider__bullets {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 100;
+		width: 50px;
+		flex-direction: column;
+		transform: translateY(-50%);
+
+		.slider__bullet {
+			width: 100%;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: transparent;
+			cursor: pointer;
+
+			&:after {
+				content: '';
+				width: 100%;
+				height: 3px;
+				background: $border;
+				transform: translateX(35px);
+				transition: ease-in-out 300ms all;
+			}
+
+			&:hover,
+			&.active {
+				&:after {
+					transform: translateX(0);
+				}
+			}
+		}
+
+		transform: translateX(100%) translateY(-50%);
+		transition: all ease-in-out 350ms;
+		pointer-events: none;
+
+		&.enter {
+			transform: translateX(0) translateY(-50%);
+			pointer-events: auto;
+		}
+	}
+
+	&.negative {
+		.slider__bullets {
+			.slider__bullet {
+				&:after {
+					background: white;
+				}
+			}
+		}
+	}
+}

@@ -24,13 +24,15 @@ export const DATA = [{
 		"id": 21,
 		"template": Templates.TextCenter,
 		"name": "Chi Siamo",
-		"title": "Chi Siamo"
+		"title": "Chi Siamo"/*,
+		"image": "img/slides/slide-2-0.jpg"*/
 	}, {
 		"id": 22,
 		"template": Templates.TextLeft,
 		"name": "Core Values",
 		"title": "Core Values",
 		"abstract": "<p>I nostri Core Value tramandano la nostra cultura e definiscono il carattere della nostra Azienda.</p><p>Ogni giorno guidano il modo in cui ci comportiamo e con cui prendiamo decisioni.</p>",
+		"image": "img/slides/slide-2-1.jpg",
 		"list": [{
 			"title": "Tenacia"
 		}, {
@@ -41,8 +43,7 @@ export const DATA = [{
 			"title": "Qualità del Prodotto"
 		}, {
 			"title": "Responsabilità"
-		}],
-		"image": "img/slides/slide-2-1.jpg"
+		}]
 	}, {
 		"id": 23,
 		"template": Templates.TextCenter,
@@ -81,23 +82,23 @@ export const DATA = [{
 		"abstract": "Presenti in Italia, Cina, Regno Unito e Uzbekistan.",
 		"image": "img/slides/slide-2-6.png",
 		"pins": [{
-			"x": 0,
-			"y": 0,
+			"x": 184 / 1920 * 100,
+			"y": 553 / 1110 * 100,
 			"title": "Regno Unito",
 			"abstract": "Birmingham"
 		}, {
-			"x": 0,
-			"y": 0,
+			"x": 387 / 1920 * 100,
+			"y": 751 / 1110 * 100,
 			"title": "Italia",
 			"abstract": "HQ Firenze, Grosseto, Milano, Verona, Roma, Trento, Mestre"
 		}, {
-			"x": 0,
-			"y": 0,
+			"x": 1102 / 1920 * 100,
+			"y": 748 / 1110 * 100,
 			"title": "Uzbekistan",
 			"abstract": "Tashkent"
 		}, {
-			"x": 0,
-			"y": 0,
+			"x": 1612 / 1920 * 100,
+			"y": 966 / 1110 * 100,
 			"title": "China",
 			"abstract": "Shangai"
 		}]
@@ -108,6 +109,7 @@ export const DATA = [{
 		"title": "obiettivi futuri",
 		"abstract": "Continuo sviluppo della competenza multidisciplinare, del supporto normativo e l’automazione e digitalizzazione dei processi.",
 		"description": "<p>Gli obiettivi sono fornire al mercato soluzioni software complete (end to end) dedicate al mercato della Distribuzione (quali la Misura, lo Smart Metering, il Settlement, la Work Force Management, attività di Back Office) e della Vendita.</p><p>Nuovi investimenti in tecnologie per lo sviluppo di progetti di Smart Metering, Smart Grid e Smart City.</p>",
+		"image": "img/slides/slide-2-7.jpg",
 		"list": [{
 			"title": "Misura"
 		}, {
@@ -122,8 +124,7 @@ export const DATA = [{
 			"title": "Smart grid"
 		}, {
 			"title": "Smart City"
-		}],
-		"image": "img/slides/slide-2-7.jpg"
+		}]
 	}],
 }, {
 	"id": 3,
@@ -136,34 +137,35 @@ export const DATA = [{
 		"title": "I partner"
 	}, {
 		"id": 32,
-		"template": Templates.TextLeft,
+		"template": Templates.TextMap,
 		"name": "Pietro Fiorentini",
-		"title": "Pietro Fiorentini",
-		"abstract": "",
-		"list": [{
-			"title": "Tenacia"
-		}],
-		"image": "img/slides/slide-3-1.jpg"
+		"logo": "img/loghi/partners/pietro-fiorentini.png",
+		"title": "È partner di Terranova dal 2011",
+		"abstract": "385€ Millioni di fatturato 74€ Millioni EBITDA.",
+		"image": "img/slides/slide-4.png",
+		"pins": []
 	}, {
 		"id": 32,
-		"template": Templates.TextLeft,
+		"template": Templates.TextCenter,
 		"name": "Arcoda",
-		"title": "Arcoda",
-		"abstract": "",
+		"title": "Terranova è partner di Arcoda",
+		"abstract": "di cui detiene il 60% del capitale",
+		"logo": "img/loghi/partners/arcoda.png",
+		"description": "Arcoda sviluppa soluzioni tecnologiche vincenti, progettate per chi è chiamato a gestire quotidianamente forza lavoro sul territorio.",
 		"list": [{
 			"title": "Tenacia"
-		}],
-		"image": "img/slides/slide-3-1.jpg"
+		}]
 	}, {
 		"id": 32,
-		"template": Templates.TextLeft,
+		"template": Templates.TextCenter,
 		"name": "Ambiente.it",
-		"title": "Ambiente.it",
-		"abstract": "",
+		"title": "Terranova è partner di Ambiente.it",
+		"abstract": "di cui detiene il 60% del capitale",
+		"logo": "img/loghi/partners/ambiente.it.png",
+		"description": "<p>Ambiente.it da quasi trent’anni sviluppa software gestionali ed eroga servizi professionali per la filiera dei rifiuti speciali e urbani.</p><p>Si propone al mercato con un servizio completo per la informatizzazione gestionale di tutte le problematiche ambientali, offrendo ai propri clienti soluzioni software, informazione, formazione, consulenza e assistenza.</p><p>Ambiente.it supporta oltre mille clienti in tutta Italia; è presente in grandi realtà industriali così come nei Consorzi e nelle Utility di igiene urbana, ed in centinaia di medie e piccole imprese in tutta Italia, con migliaia di utenti che utilizzano giornalmente i suoi software.</p>",
 		"list": [{
 			"title": "Tenacia"
-		}],
-		"image": "img/slides/slide-3-1.jpg"
+		}]
 	}]
 }, {
 	"id": 4,
@@ -340,54 +342,54 @@ export const DATA = [{
 	"abstract": "I nostri principali Clienti nel Mondo",
 	"image": "img/slides/slide-4.png",
 	"pins": [
-		{ "x": 0, "y": 0, "title": "Acsm Agam", "logo": "img/suite/reti/clienti/acsm agam.png" },
-		{ "x": 0, "y": 0, "title": "Adrigas", "logo": "img/suite/reti/clienti/adrigas.png" },
-		{ "x": 0, "y": 0, "title": "Aemme Linea Distribuzione", "logo": "img/suite/reti/clienti/aemme-linea-distribuzione.png" },
-		{ "x": 0, "y": 0, "title": "Amag Reti Gas", "logo": "img/suite/reti/clienti/amag reti gas.png" },
-		{ "x": 0, "y": 0, "title": "Amc", "logo": "img/suite/reti/clienti/amc.png" },
-		{ "x": 0, "y": 0, "title": "AP Reti Gas Nordest", "logo": "img/suite/reti/clienti/ap reti gas nordest.png" },
-		{ "x": 0, "y": 0, "title": "AP Reti Gas Rovigo", "logo": "img/suite/reti/clienti/ap reti gas rovigo.png" },
-		{ "x": 0, "y": 0, "title": "AP Reti Gas Vicenza", "logo": "img/suite/reti/clienti/ap reti gas vicenza.png" },
-		{ "x": 0, "y": 0, "title": "AP Reti Gas", "logo": "img/suite/reti/clienti/ap reti gas.png" },
-		{ "x": 0, "y": 0, "title": "Aquamet", "logo": "img/suite/reti/clienti/aquamet.png" },
-		{ "x": 0, "y": 0, "title": "Asm Vigevano", "logo": "img/suite/reti/clienti/asm vigevano.png" },
-		{ "x": 0, "y": 0, "title": "Asmt", "logo": "img/suite/reti/clienti/asmt.png" },
-		{ "x": 0, "y": 0, "title": "Atr", "logo": "img/suite/reti/clienti/atr.png" },
-		{ "x": 0, "y": 0, "title": "Azienda Energetica Valtellina Valchiavenna", "logo": "img/suite/reti/clienti/azienda energetica valtellina valchiavenna.png" },
-		{ "x": 0, "y": 0, "title": "Blu Reti Gas", "logo": "img/suite/reti/clienti/blu reti gas.png" },
-		{ "x": 0, "y": 0, "title": "Cbl Distribuzione Srl", "logo": "img/suite/reti/clienti/cbl distribuzione srl.png" },
-		{ "x": 0, "y": 0, "title": "Centria Reti Gas", "logo": "img/suite/reti/clienti/centria reti gas.png" },
-		{ "x": 0, "y": 0, "title": "Cosvim", "logo": "img/suite/reti/clienti/cosvim.png" },
-		{ "x": 0, "y": 0, "title": "Cps", "logo": "img/suite/reti/clienti/cps.png" },
-		{ "x": 0, "y": 0, "title": "Dea Distribuzione Elettrica Adriatica", "logo": "img/suite/reti/clienti/dea distribuzione elettrica adriatica.png" },
-		{ "x": 0, "y": 0, "title": "Dgn", "logo": "img/suite/reti/clienti/dgn.png" },
-		{ "x": 0, "y": 0, "title": "E-Dyna", "logo": "img/suite/reti/clienti/e-dyna.png" },
-		{ "x": 0, "y": 0, "title": "E", "logo": "img/suite/reti/clienti/e.png" },
-		{ "x": 0, "y": 0, "title": "Edilgas", "logo": "img/suite/reti/clienti/edilgas.png" },
-		{ "x": 0, "y": 0, "title": "Edma Reti Gas", "logo": "img/suite/reti/clienti/edma reti gas.png" },
-		{ "x": 0, "y": 0, "title": "Gei", "logo": "img/suite/reti/clienti/gei.png" },
-		{ "x": 0, "y": 0, "title": "Gigas Rete", "logo": "img/suite/reti/clienti/gigas rete.png" },
-		{ "x": 0, "y": 0, "title": "Gp Infrastrutture", "logo": "img/suite/reti/clienti/gp infrastrutture.png" },
-		{ "x": 0, "y": 0, "title": "Gruppo Erogasmet", "logo": "img/suite/reti/clienti/gruppo erogasmet.png" },
-		{ "x": 0, "y": 0, "title": "Gruppo Gesam", "logo": "img/suite/reti/clienti/gruppo gesam.png" },
-		{ "x": 0, "y": 0, "title": "Infrastrutture Distribuzione Gas", "logo": "img/suite/reti/clienti/infrastrutture distribuzione gas.png" },
-		{ "x": 0, "y": 0, "title": "IReti", "logo": "img/suite/reti/clienti/ireti.png" },
-		{ "x": 0, "y": 0, "title": "Linea Ri", "logo": "img/suite/reti/clienti/linea ri.png" },
-		{ "x": 0, "y": 0, "title": "M Reti", "logo": "img/suite/reti/clienti/m reti.png" },
-		{ "x": 0, "y": 0, "title": "Mediterranea", "logo": "img/suite/reti/clienti/mediterranea.png" },
-		{ "x": 0, "y": 0, "title": "Megareti", "logo": "img/suite/reti/clienti/megareti.png" },
-		{ "x": 0, "y": 0, "title": "Meta Edil", "logo": "img/suite/reti/clienti/meta edil.png" },
-		{ "x": 0, "y": 0, "title": "Mn", "logo": "img/suite/reti/clienti/mn.png" },
-		{ "x": 0, "y": 0, "title": "Pescara Distribuzione Gas", "logo": "img/suite/reti/clienti/pescara distribuzione gas.png" },
-		{ "x": 0, "y": 0, "title": "Prealpi Gas", "logo": "img/suite/reti/clienti/prealpi gas.png" },
-		{ "x": 0, "y": 0, "title": "Reti Distribuzione", "logo": "img/suite/reti/clienti/reti distribuzione.png" },
-		{ "x": 0, "y": 0, "title": "Reti Metano Territorio", "logo": "img/suite/reti/clienti/reti metano territorio.png" },
-		{ "x": 0, "y": 0, "title": "Reti Più", "logo": "img/suite/reti/clienti/reti-più.png" },
-		{ "x": 0, "y": 0, "title": "Salerno Energia Holding", "logo": "img/suite/reti/clienti/salerno energia holding.png" },
-		{ "x": 0, "y": 0, "title": "Sar", "logo": "img/suite/reti/clienti/sar.png" },
-		{ "x": 0, "y": 0, "title": "Società Impianti Metano", "logo": "img/suite/reti/clienti/società impianti metano.png" },
-		{ "x": 0, "y": 0, "title": "Stadtwerke Asm", "logo": "img/suite/reti/clienti/stadtwerke asm.png" },
-		{ "x": 0, "y": 0, "title": "Tea Sei", "logo": "img/suite/reti/clienti/tea sei.png" },
-		{ "x": 0, "y": 0, "title": "Tecniconsul", "logo": "img/suite/reti/clienti/tecni consul.png" }
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Acsm Agam", "logo": "img/suite/reti/clienti/acsm agam.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Adrigas", "logo": "img/suite/reti/clienti/adrigas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Aemme Linea Distribuzione", "logo": "img/suite/reti/clienti/aemme-linea-distribuzione.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Amag Reti Gas", "logo": "img/suite/reti/clienti/amag reti gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Amc", "logo": "img/suite/reti/clienti/amc.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "AP Reti Gas Nordest", "logo": "img/suite/reti/clienti/ap reti gas nordest.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "AP Reti Gas Rovigo", "logo": "img/suite/reti/clienti/ap reti gas rovigo.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "AP Reti Gas Vicenza", "logo": "img/suite/reti/clienti/ap reti gas vicenza.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "AP Reti Gas", "logo": "img/suite/reti/clienti/ap reti gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Aquamet", "logo": "img/suite/reti/clienti/aquamet.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Asm Vigevano", "logo": "img/suite/reti/clienti/asm vigevano.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Asmt", "logo": "img/suite/reti/clienti/asmt.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Atr", "logo": "img/suite/reti/clienti/atr.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Azienda Energetica Valtellina Valchiavenna", "logo": "img/suite/reti/clienti/azienda energetica valtellina valchiavenna.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Blu Reti Gas", "logo": "img/suite/reti/clienti/blu reti gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Cbl Distribuzione Srl", "logo": "img/suite/reti/clienti/cbl distribuzione srl.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Centria Reti Gas", "logo": "img/suite/reti/clienti/centria reti gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Cosvim", "logo": "img/suite/reti/clienti/cosvim.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Cps", "logo": "img/suite/reti/clienti/cps.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Dea Distribuzione Elettrica Adriatica", "logo": "img/suite/reti/clienti/dea distribuzione elettrica adriatica.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Dgn", "logo": "img/suite/reti/clienti/dgn.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "E-Dyna", "logo": "img/suite/reti/clienti/e-dyna.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "E", "logo": "img/suite/reti/clienti/e.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Edilgas", "logo": "img/suite/reti/clienti/edilgas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Edma Reti Gas", "logo": "img/suite/reti/clienti/edma reti gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Gei", "logo": "img/suite/reti/clienti/gei.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Gigas Rete", "logo": "img/suite/reti/clienti/gigas rete.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Gp Infrastrutture", "logo": "img/suite/reti/clienti/gp infrastrutture.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Gruppo Erogasmet", "logo": "img/suite/reti/clienti/gruppo erogasmet.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Gruppo Gesam", "logo": "img/suite/reti/clienti/gruppo gesam.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Infrastrutture Distribuzione Gas", "logo": "img/suite/reti/clienti/infrastrutture distribuzione gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "IReti", "logo": "img/suite/reti/clienti/ireti.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Linea Ri", "logo": "img/suite/reti/clienti/linea ri.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "M Reti", "logo": "img/suite/reti/clienti/m reti.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Mediterranea", "logo": "img/suite/reti/clienti/mediterranea.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Megareti", "logo": "img/suite/reti/clienti/megareti.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Meta Edil", "logo": "img/suite/reti/clienti/meta edil.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Mn", "logo": "img/suite/reti/clienti/mn.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Pescara Distribuzione Gas", "logo": "img/suite/reti/clienti/pescara distribuzione gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Prealpi Gas", "logo": "img/suite/reti/clienti/prealpi gas.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Reti Distribuzione", "logo": "img/suite/reti/clienti/reti distribuzione.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Reti Metano Territorio", "logo": "img/suite/reti/clienti/reti metano territorio.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Reti Più", "logo": "img/suite/reti/clienti/reti-più.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Salerno Energia Holding", "logo": "img/suite/reti/clienti/salerno energia holding.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Sar", "logo": "img/suite/reti/clienti/sar.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Società Impianti Metano", "logo": "img/suite/reti/clienti/società impianti metano.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Stadtwerke Asm", "logo": "img/suite/reti/clienti/stadtwerke asm.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Tea Sei", "logo": "img/suite/reti/clienti/tea sei.png" },
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Tecniconsul", "logo": "img/suite/reti/clienti/tecni consul.png" }
 	]
 }];

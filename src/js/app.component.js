@@ -1,11 +1,20 @@
 import { Component, getContext } from 'rxcomp';
-import { first } from 'rxjs/operators';
+import { first, takeUntil } from 'rxjs/operators';
 import { Templates } from './api/api.data';
 // import { DATA } from './api/api.data';
 import { ApiService } from './api/api.service';
+import KeyboardService from './keyboard/keyboard.service';
 import SliderComponent from './slider/slider.component';
 
 export default class AppComponent extends Component {
+
+	get showMenu() {
+		return this.showMenu_;
+	}
+	set showMenu(showMenu) {
+		this.showMenu_ = showMenu;
+		SliderComponent.disabled = showMenu;
+	}
 
 	onInit() {
 		const { node } = getContext(this);
@@ -27,6 +36,9 @@ export default class AppComponent extends Component {
 			this.items = this.collectItems(this.slides);
 		});
 
+		this.slider = null;
+		this.subSlider = null;
+
 		/*
 		this.slides = new Array(4).fill(0).map((_, i) => {
 			return {
@@ -39,6 +51,13 @@ export default class AppComponent extends Component {
 			}
 		});
 		*/
+		KeyboardService.keys$().pipe(
+			takeUntil(this.unsubscribe$)
+		).subscribe(keys => {
+			if (keys.Space) {
+				this.onToggleMenu();
+			}
+		});
 	}
 
 	collectItems(slides, items = []) {
@@ -52,12 +71,18 @@ export default class AppComponent extends Component {
 	}
 
 	onSliderInit(slider) {
-		console.log('AppComponent.onSliderInit', slider);
+		// console.log('AppComponent.onSliderInit', slider);
 		this.slider = slider;
 	}
 
 	onSliderChange(index) {
-		console.log('AppComponent.onSliderChange', index);
+		// console.log('AppComponent.onSliderChange', index);
+		this.showMenu = false;
+		this.pushChanges();
+	}
+
+	onSubSliderChange(index) {
+		// console.log('AppComponent.onSubSliderChange', index);
 		this.showMenu = false;
 		this.pushChanges();
 	}
@@ -72,15 +97,17 @@ export default class AppComponent extends Component {
 		this.slider.navTo(index);
 	}
 
-	onMenuNav(nav) {
-		console.log('AppComponent.onMenuNav', nav);
-		this.slider.navTo(nav.chapterIndex);
-	}
-
 	onToggleMenu() {
 		this.showMenu = !this.showMenu;
-		SliderComponent.disabled = this.showMenu;
 		this.pushChanges();
+	}
+
+	onMenuNav(nav) {
+		// console.log('AppComponent.onMenuNav', nav);
+		this.slider.onMenuNav(nav);
+		this.showMenu = false;
+		this.pushChanges();
+		// this.slider.navTo(nav.chapterIndex);
 	}
 
 	get currentChapter() {

@@ -3,7 +3,7 @@ import { Component } from 'rxcomp';
 export default class ViewTabsComponent extends Component {
 
 	onInit() {
-		console.log('ViewTabsComponent');
+		// console.log('ViewTabsComponent');
 		this.index = 0;
 		this.slide = this.item.items[0];
 	}

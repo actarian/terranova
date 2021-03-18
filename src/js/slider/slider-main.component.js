@@ -9,7 +9,12 @@ export default class SliderMainComponent extends SliderComponent {
 	set current(current) { this.setCurrent(current); }
 
 	get wrapperStyle() {
-		return { 'transform': 'translate3d(' + -this.slideWidth * this.current + 'px, 0, 0)' };
+		const style = { 'transform': 'translate3d(' + -this.slideWidth * this.current + 'px, 0, 0)' };
+		if (this.immediate) {
+			style.transition = 'none';
+		}
+		// console.log('SliderMainComponent', style.transition);
+		return style;
 	}
 
 	get innerStyle() {
@@ -28,6 +33,7 @@ export default class SliderMainComponent extends SliderComponent {
 		this.resize$().pipe(
 			takeUntil(this.unsubscribe$)
 		).subscribe(() => this.pushChanges());
+		this.subSlider = null;
 	}
 
 	resize$() {
@@ -44,13 +50,34 @@ export default class SliderMainComponent extends SliderComponent {
 		node.classList.remove('content-over');
 	}
 
-	navTo(current) {
-		super.navTo(current);
+	navTo(current, immediate) {
+		super.navTo(current, immediate);
+	}
+
+	onSubSliderInit(subSlider, item) {
+		// console.log('SliderMainComponent.onSubSliderInit', subSlider);
+		item.subSlider = subSlider;
+		// this.pushChanges();
+	}
+
+	onSubSliderChange(index) {
+		// console.log('SliderMainComponent.onSubSliderChange', index);
+		this.subChange.next(index);
+		// this.pushChanges();
+	}
+
+	onMenuNav(nav) {
+		// console.log('AppComponent.onMenuNav', nav);
+		super.navTo(nav.chapterIndex, true);
+		const item = this.items[nav.chapterIndex];
+		if (item.subSlider) {
+			item.subSlider.navTo(nav.index, true);
+		}
 	}
 }
 
 SliderMainComponent.meta = {
 	selector: '[slider-main]',
 	inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical'],
-	outputs: ['change', 'tween', 'init'],
+	outputs: ['init', 'change', 'subChange'],
 };

@@ -201,7 +201,7 @@ export default class DragService {
 	static isChildOf(parent, child) {
 		let node = child ? child.parentNode : null;
 		while (node != null) {
-			console.log(node, parent, node === parent);
+			// console.log(node, parent, node === parent);
 			if (node === parent) {
 				return true;
 			}

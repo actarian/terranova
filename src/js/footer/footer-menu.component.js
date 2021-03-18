@@ -6,7 +6,7 @@ import KeyboardService from '../keyboard/keyboard.service';
 export default class FooterMenuComponent extends Component {
 
 	onInit() {
-		console.log('FooterMenuComponent.onInit');
+		// console.log('FooterMenuComponent.onInit');
 		const { node } = getContext(this);
 		node.focus();
 
@@ -34,7 +34,7 @@ export default class FooterMenuComponent extends Component {
 				keys.originalEvent.preventDefault();
 				keys.originalEvent.stopPropagation();
 			}
-			console.log(this.current);
+			// console.log(this.current);
 		});
 		return this.wheel$(node).pipe(
 			takeUntil(this.unsubscribe$)
@@ -91,22 +91,34 @@ export default class FooterMenuComponent extends Component {
 	}
 
 	onSelect(item) {
-		let chapterIndex = -1, index = -1;
+		let chapterIndex = 0, index = 0, chapter;
 		this.slides.forEach((slide, i) => {
 			if (slide === item) {
 				chapterIndex = i;
+				chapter = slide;
 			}
 			if (slide.items) {
 				slide.items.forEach((subItem, subIndex) => {
 					if (subItem === item) {
 						chapterIndex = i;
 						index = subIndex;
+						chapter = slide;
 					}
 				});
 			}
 		});
-		console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
-		this.nav.next({ item, chapterIndex, index });
+		if (this.current !== chapterIndex || chapter.current !== index) {
+			this.current = chapterIndex;
+			chapter.current = index;
+			this.pushChanges();
+			setTimeout(() => {
+				// console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
+				this.nav.next({ item, chapterIndex, index });
+			}, 500);
+		} else {
+			// console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
+			this.nav.next({ item, chapterIndex, index });
+		}
 	}
 
 	navTo(index) {

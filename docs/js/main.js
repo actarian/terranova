@@ -65,12 +65,16 @@ var DATA = [{
     "template": Templates.TextCenter,
     "name": "Chi Siamo",
     "title": "Chi Siamo"
+    /*,
+    "image": "img/slides/slide-2-0.jpg"*/
+
   }, {
     "id": 22,
     "template": Templates.TextLeft,
     "name": "Core Values",
     "title": "Core Values",
     "abstract": "<p>I nostri Core Value tramandano la nostra cultura e definiscono il carattere della nostra Azienda.</p><p>Ogni giorno guidano il modo in cui ci comportiamo e con cui prendiamo decisioni.</p>",
+    "image": "img/slides/slide-2-1.jpg",
     "list": [{
       "title": "Tenacia"
     }, {
@@ -81,8 +85,7 @@ var DATA = [{
       "title": "Qualità del Prodotto"
     }, {
       "title": "Responsabilità"
-    }],
-    "image": "img/slides/slide-2-1.jpg"
+    }]
   }, {
     "id": 23,
     "template": Templates.TextCenter,
@@ -121,23 +124,23 @@ var DATA = [{
     "abstract": "Presenti in Italia, Cina, Regno Unito e Uzbekistan.",
     "image": "img/slides/slide-2-6.png",
     "pins": [{
-      "x": 0,
-      "y": 0,
+      "x": 184 / 1920 * 100,
+      "y": 553 / 1110 * 100,
       "title": "Regno Unito",
       "abstract": "Birmingham"
     }, {
-      "x": 0,
-      "y": 0,
+      "x": 387 / 1920 * 100,
+      "y": 751 / 1110 * 100,
       "title": "Italia",
       "abstract": "HQ Firenze, Grosseto, Milano, Verona, Roma, Trento, Mestre"
     }, {
-      "x": 0,
-      "y": 0,
+      "x": 1102 / 1920 * 100,
+      "y": 748 / 1110 * 100,
       "title": "Uzbekistan",
       "abstract": "Tashkent"
     }, {
-      "x": 0,
-      "y": 0,
+      "x": 1612 / 1920 * 100,
+      "y": 966 / 1110 * 100,
       "title": "China",
       "abstract": "Shangai"
     }]
@@ -148,6 +151,7 @@ var DATA = [{
     "title": "obiettivi futuri",
     "abstract": "Continuo sviluppo della competenza multidisciplinare, del supporto normativo e l’automazione e digitalizzazione dei processi.",
     "description": "<p>Gli obiettivi sono fornire al mercato soluzioni software complete (end to end) dedicate al mercato della Distribuzione (quali la Misura, lo Smart Metering, il Settlement, la Work Force Management, attività di Back Office) e della Vendita.</p><p>Nuovi investimenti in tecnologie per lo sviluppo di progetti di Smart Metering, Smart Grid e Smart City.</p>",
+    "image": "img/slides/slide-2-7.jpg",
     "list": [{
       "title": "Misura"
     }, {
@@ -162,8 +166,7 @@ var DATA = [{
       "title": "Smart grid"
     }, {
       "title": "Smart City"
-    }],
-    "image": "img/slides/slide-2-7.jpg"
+    }]
   }]
 }, {
   "id": 3,
@@ -176,34 +179,35 @@ var DATA = [{
     "title": "I partner"
   }, {
     "id": 32,
-    "template": Templates.TextLeft,
+    "template": Templates.TextMap,
     "name": "Pietro Fiorentini",
-    "title": "Pietro Fiorentini",
-    "abstract": "",
-    "list": [{
-      "title": "Tenacia"
-    }],
-    "image": "img/slides/slide-3-1.jpg"
+    "logo": "img/loghi/partners/pietro-fiorentini.png",
+    "title": "È partner di Terranova dal 2011",
+    "abstract": "385€ Millioni di fatturato 74€ Millioni EBITDA.",
+    "image": "img/slides/slide-4.png",
+    "pins": []
   }, {
     "id": 32,
-    "template": Templates.TextLeft,
+    "template": Templates.TextCenter,
     "name": "Arcoda",
-    "title": "Arcoda",
-    "abstract": "",
+    "title": "Terranova è partner di Arcoda",
+    "abstract": "di cui detiene il 60% del capitale",
+    "logo": "img/loghi/partners/arcoda.png",
+    "description": "Arcoda sviluppa soluzioni tecnologiche vincenti, progettate per chi è chiamato a gestire quotidianamente forza lavoro sul territorio.",
     "list": [{
       "title": "Tenacia"
-    }],
-    "image": "img/slides/slide-3-1.jpg"
+    }]
   }, {
     "id": 32,
-    "template": Templates.TextLeft,
+    "template": Templates.TextCenter,
     "name": "Ambiente.it",
-    "title": "Ambiente.it",
-    "abstract": "",
+    "title": "Terranova è partner di Ambiente.it",
+    "abstract": "di cui detiene il 60% del capitale",
+    "logo": "img/loghi/partners/ambiente.it.png",
+    "description": "<p>Ambiente.it da quasi trent’anni sviluppa software gestionali ed eroga servizi professionali per la filiera dei rifiuti speciali e urbani.</p><p>Si propone al mercato con un servizio completo per la informatizzazione gestionale di tutte le problematiche ambientali, offrendo ai propri clienti soluzioni software, informazione, formazione, consulenza e assistenza.</p><p>Ambiente.it supporta oltre mille clienti in tutta Italia; è presente in grandi realtà industriali così come nei Consorzi e nelle Utility di igiene urbana, ed in centinaia di medie e piccole imprese in tutta Italia, con migliaia di utenti che utilizzano giornalmente i suoi software.</p>",
     "list": [{
       "title": "Tenacia"
-    }],
-    "image": "img/slides/slide-3-1.jpg"
+    }]
   }]
 }, {
   "id": 4,
@@ -477,248 +481,248 @@ var DATA = [{
   "abstract": "I nostri principali Clienti nel Mondo",
   "image": "img/slides/slide-4.png",
   "pins": [{
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Acsm Agam",
     "logo": "img/suite/reti/clienti/acsm agam.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Adrigas",
     "logo": "img/suite/reti/clienti/adrigas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Aemme Linea Distribuzione",
     "logo": "img/suite/reti/clienti/aemme-linea-distribuzione.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Amag Reti Gas",
     "logo": "img/suite/reti/clienti/amag reti gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Amc",
     "logo": "img/suite/reti/clienti/amc.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "AP Reti Gas Nordest",
     "logo": "img/suite/reti/clienti/ap reti gas nordest.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "AP Reti Gas Rovigo",
     "logo": "img/suite/reti/clienti/ap reti gas rovigo.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "AP Reti Gas Vicenza",
     "logo": "img/suite/reti/clienti/ap reti gas vicenza.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "AP Reti Gas",
     "logo": "img/suite/reti/clienti/ap reti gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Aquamet",
     "logo": "img/suite/reti/clienti/aquamet.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Asm Vigevano",
     "logo": "img/suite/reti/clienti/asm vigevano.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Asmt",
     "logo": "img/suite/reti/clienti/asmt.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Atr",
     "logo": "img/suite/reti/clienti/atr.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Azienda Energetica Valtellina Valchiavenna",
     "logo": "img/suite/reti/clienti/azienda energetica valtellina valchiavenna.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Blu Reti Gas",
     "logo": "img/suite/reti/clienti/blu reti gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Cbl Distribuzione Srl",
     "logo": "img/suite/reti/clienti/cbl distribuzione srl.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Centria Reti Gas",
     "logo": "img/suite/reti/clienti/centria reti gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Cosvim",
     "logo": "img/suite/reti/clienti/cosvim.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Cps",
     "logo": "img/suite/reti/clienti/cps.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Dea Distribuzione Elettrica Adriatica",
     "logo": "img/suite/reti/clienti/dea distribuzione elettrica adriatica.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Dgn",
     "logo": "img/suite/reti/clienti/dgn.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "E-Dyna",
     "logo": "img/suite/reti/clienti/e-dyna.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "E",
     "logo": "img/suite/reti/clienti/e.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Edilgas",
     "logo": "img/suite/reti/clienti/edilgas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Edma Reti Gas",
     "logo": "img/suite/reti/clienti/edma reti gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Gei",
     "logo": "img/suite/reti/clienti/gei.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Gigas Rete",
     "logo": "img/suite/reti/clienti/gigas rete.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Gp Infrastrutture",
     "logo": "img/suite/reti/clienti/gp infrastrutture.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Gruppo Erogasmet",
     "logo": "img/suite/reti/clienti/gruppo erogasmet.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Gruppo Gesam",
     "logo": "img/suite/reti/clienti/gruppo gesam.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Infrastrutture Distribuzione Gas",
     "logo": "img/suite/reti/clienti/infrastrutture distribuzione gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "IReti",
     "logo": "img/suite/reti/clienti/ireti.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Linea Ri",
     "logo": "img/suite/reti/clienti/linea ri.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "M Reti",
     "logo": "img/suite/reti/clienti/m reti.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Mediterranea",
     "logo": "img/suite/reti/clienti/mediterranea.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Megareti",
     "logo": "img/suite/reti/clienti/megareti.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Meta Edil",
     "logo": "img/suite/reti/clienti/meta edil.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Mn",
     "logo": "img/suite/reti/clienti/mn.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Pescara Distribuzione Gas",
     "logo": "img/suite/reti/clienti/pescara distribuzione gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Prealpi Gas",
     "logo": "img/suite/reti/clienti/prealpi gas.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Reti Distribuzione",
     "logo": "img/suite/reti/clienti/reti distribuzione.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Reti Metano Territorio",
     "logo": "img/suite/reti/clienti/reti metano territorio.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Reti Più",
     "logo": "img/suite/reti/clienti/reti-più.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Salerno Energia Holding",
     "logo": "img/suite/reti/clienti/salerno energia holding.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Sar",
     "logo": "img/suite/reti/clienti/sar.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Società Impianti Metano",
     "logo": "img/suite/reti/clienti/società impianti metano.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Stadtwerke Asm",
     "logo": "img/suite/reti/clienti/stadtwerke asm.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Tea Sei",
     "logo": "img/suite/reti/clienti/tea sei.png"
   }, {
-    "x": 0,
-    "y": 0,
+    "x": Math.random() * 1920 / 1920 * 100,
+    "y": (400 + Math.random() * 710) / 1110 * 100,
     "title": "Tecniconsul",
     "logo": "img/suite/reti/clienti/tecni consul.png"
   }]
@@ -730,7 +734,84 @@ var DATA = [{
   };
 
   return ApiService;
-}();var DragPoint = function DragPoint() {
+}();var KeyboardService = /*#__PURE__*/function () {
+  function KeyboardService() {}
+
+  KeyboardService.keydown$ = function keydown$() {
+    if (!this.keydown$_) {
+      this.keydown$_ = rxjs.fromEvent(window, 'keydown').pipe(operators.shareReplay(1));
+    }
+
+    return this.keydown$_;
+  };
+
+  KeyboardService.keyup$ = function keyup$() {
+    if (!this.keyup$_) {
+      this.keyup$_ = rxjs.fromEvent(window, 'keyup').pipe(operators.shareReplay(1));
+    }
+
+    return this.keyup$_;
+  };
+
+  KeyboardService.keys$ = function keys$() {
+    var _this = this;
+
+    if (!this.keys$_) {
+      this.keys$_ = rxjs.merge(this.keydown$(), this.keyup$()).pipe(operators.map(function (event) {
+        var keys = _this.keys;
+        keys.originalEvent = event;
+
+        if (event.type === 'keydown') {
+          // console.log(event.key, event.code);
+          keys[event.code] = true;
+        } else {
+          delete keys[event.code];
+        }
+
+        return _this.keys;
+      }), operators.startWith(this.keys), operators.shareReplay(1));
+    }
+
+    return this.keys$_;
+  };
+
+  KeyboardService.key$ = function key$() {
+    if (!this.key$_) {
+      var regexp = /\w/;
+      this.key$_ = this.keydown$().pipe(operators.filter(function (event) {
+        return event.key && event.key.match(regexp);
+      }), operators.map(function (event) {
+        return event.key;
+      }), operators.shareReplay(1));
+    }
+
+    return this.key$_;
+  };
+
+  KeyboardService.typing$ = function typing$() {
+    if (!this.typing$_) {
+      var typing = '',
+          to;
+      this.typing$_ = this.key$().pipe(operators.map(function (key) {
+        if (to) {
+          clearTimeout(to);
+        }
+
+        typing += key;
+        to = setTimeout(function () {
+          typing = '';
+        }, 1500);
+        return typing;
+      }), operators.shareReplay(1));
+    }
+
+    return this.typing$_;
+  };
+
+  return KeyboardService;
+}();
+
+_defineProperty(KeyboardService, "keys", {});var DragPoint = function DragPoint() {
   this.x = 0;
   this.y = 0;
 };
@@ -931,8 +1012,7 @@ var DragService = /*#__PURE__*/function () {
     var node = child ? child.parentNode : null;
 
     while (node != null) {
-      console.log(node, parent, node === parent);
-
+      // console.log(node, parent, node === parent);
       if (node === parent) {
         return true;
       }
@@ -994,83 +1074,7 @@ _defineProperty(DragService, "current$", new rxjs.ReplaySubject(1));var Intersec
   };
 
   return IntersectionService;
-}();var KeyboardService = /*#__PURE__*/function () {
-  function KeyboardService() {}
-
-  KeyboardService.keydown$ = function keydown$() {
-    if (!this.keydown$_) {
-      this.keydown$_ = rxjs.fromEvent(window, 'keydown').pipe(operators.shareReplay(1));
-    }
-
-    return this.keydown$_;
-  };
-
-  KeyboardService.keyup$ = function keyup$() {
-    if (!this.keyup$_) {
-      this.keyup$_ = rxjs.fromEvent(window, 'keyup').pipe(operators.shareReplay(1));
-    }
-
-    return this.keyup$_;
-  };
-
-  KeyboardService.keys$ = function keys$() {
-    var _this = this;
-
-    if (!this.keys$_) {
-      this.keys$_ = rxjs.merge(this.keydown$(), this.keyup$()).pipe(operators.map(function (event) {
-        var keys = _this.keys;
-        keys.originalEvent = event;
-
-        if (event.type === 'keydown') {
-          keys[event.key] = true;
-        } else {
-          delete keys[event.key];
-        }
-
-        return _this.keys;
-      }), operators.startWith(this.keys), operators.shareReplay(1));
-    }
-
-    return this.keys$_;
-  };
-
-  KeyboardService.key$ = function key$() {
-    if (!this.key$_) {
-      var regexp = /\w/;
-      this.key$_ = this.keydown$().pipe(operators.filter(function (event) {
-        return event.key && event.key.match(regexp);
-      }), operators.map(function (event) {
-        return event.key;
-      }), operators.shareReplay(1));
-    }
-
-    return this.key$_;
-  };
-
-  KeyboardService.typing$ = function typing$() {
-    if (!this.typing$_) {
-      var typing = '',
-          to;
-      this.typing$_ = this.key$().pipe(operators.map(function (key) {
-        if (to) {
-          clearTimeout(to);
-        }
-
-        typing += key;
-        to = setTimeout(function () {
-          typing = '';
-        }, 1500);
-        return typing;
-      }), operators.shareReplay(1));
-    }
-
-    return this.typing$_;
-  };
-
-  return KeyboardService;
-}();
-
-_defineProperty(KeyboardService, "keys", {});var SliderAutoplayMode = {
+}();var SliderAutoplayMode = {
   None: 0,
   Autoplay: 1,
   FocusAutoplay: 2
@@ -1292,14 +1296,16 @@ var SliderComponent = /*#__PURE__*/function (_Component) {
     var _getContext2 = rxcomp.getContext(this),
         node = _getContext2.node;
 
-    var slides = Array.prototype.slice.call(node.querySelectorAll('.slider__slide'));
+    var wrapper = node.firstElementChild;
+    var inner = wrapper.firstElementChild;
+    var slides = Array.prototype.slice.call(inner.children);
     slides.forEach(function (slide, i) {
       if (i === current) {
         slide.classList.add('active');
       } else {
         slide.classList.remove('active');
       }
-    });
+    }); // console.log('setActiveState', current, node);
   };
 
   _proto.checkAutoplay = function checkAutoplay() {
@@ -1491,11 +1497,13 @@ var SliderComponent = /*#__PURE__*/function (_Component) {
     }
   };
 
-  _proto.navTo = function navTo(current) {
+  _proto.navTo = function navTo(current, immediate) {
     current = (current > 0 ? current : this.items.length + current) % this.items.length;
+    this.immediate = immediate;
     this.setCurrent(current);
     this.userGesture = true;
     this.pushChanges();
+    this.immediate = false;
   };
 
   _proto.hasPrev = function hasPrev() {
@@ -1611,7 +1619,7 @@ var SliderComponent = /*#__PURE__*/function (_Component) {
 SliderComponent.meta = {
   selector: '[slider]',
   inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical'],
-  outputs: ['change', 'tween', 'init']
+  outputs: ['init', 'change']
 };var AppComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(AppComponent, _Component);
 
@@ -1638,6 +1646,8 @@ SliderComponent.meta = {
       _this.slides = data;
       _this.items = _this.collectItems(_this.slides);
     });
+    this.slider = null;
+    this.subSlider = null;
     /*
     this.slides = new Array(4).fill(0).map((_, i) => {
     	return {
@@ -1650,6 +1660,12 @@ SliderComponent.meta = {
     	}
     });
     */
+
+    KeyboardService.keys$().pipe(operators.takeUntil(this.unsubscribe$)).subscribe(function (keys) {
+      if (keys.Space) {
+        _this.onToggleMenu();
+      }
+    });
   };
 
   _proto.collectItems = function collectItems(slides, items) {
@@ -1670,12 +1686,18 @@ SliderComponent.meta = {
   };
 
   _proto.onSliderInit = function onSliderInit(slider) {
-    console.log('AppComponent.onSliderInit', slider);
+    // console.log('AppComponent.onSliderInit', slider);
     this.slider = slider;
   };
 
   _proto.onSliderChange = function onSliderChange(index) {
-    console.log('AppComponent.onSliderChange', index);
+    // console.log('AppComponent.onSliderChange', index);
+    this.showMenu = false;
+    this.pushChanges();
+  };
+
+  _proto.onSubSliderChange = function onSubSliderChange(index) {
+    // console.log('AppComponent.onSubSliderChange', index);
     this.showMenu = false;
     this.pushChanges();
   };
@@ -1690,18 +1712,28 @@ SliderComponent.meta = {
     this.slider.navTo(index);
   };
 
-  _proto.onMenuNav = function onMenuNav(nav) {
-    console.log('AppComponent.onMenuNav', nav);
-    this.slider.navTo(nav.chapterIndex);
-  };
-
   _proto.onToggleMenu = function onToggleMenu() {
     this.showMenu = !this.showMenu;
-    SliderComponent.disabled = this.showMenu;
     this.pushChanges();
   };
 
+  _proto.onMenuNav = function onMenuNav(nav) {
+    // console.log('AppComponent.onMenuNav', nav);
+    this.slider.onMenuNav(nav);
+    this.showMenu = false;
+    this.pushChanges(); // this.slider.navTo(nav.chapterIndex);
+  };
+
   _createClass(AppComponent, [{
+    key: "showMenu",
+    get: function get() {
+      return this.showMenu_;
+    },
+    set: function set(showMenu) {
+      this.showMenu_ = showMenu;
+      SliderComponent.disabled = showMenu;
+    }
+  }, {
     key: "currentChapter",
     get: function get() {
       if (this.slider) {
@@ -1721,6 +1753,35 @@ SliderComponent.meta = {
 }(rxcomp.Component);
 AppComponent.meta = {
   selector: '[app-component]'
+};var AppearStaggerDirective = /*#__PURE__*/function (_Directive) {
+  _inheritsLoose(AppearStaggerDirective, _Directive);
+
+  function AppearStaggerDirective() {
+    return _Directive.apply(this, arguments) || this;
+  }
+
+  var _proto = AppearStaggerDirective.prototype;
+
+  _proto.onInit = function onInit() {
+    var _getContext = rxcomp.getContext(this),
+        node = _getContext.node;
+
+    node.classList.add('appear-stagger');
+  };
+
+  _proto.onChanges = function onChanges() {
+    var _getContext2 = rxcomp.getContext(this),
+        node = _getContext2.node;
+
+    IntersectionService.firstIntersection$(node).pipe(operators.takeUntil(this.unsubscribe$)).subscribe(function (src) {
+      node.classList.add('appeared');
+    });
+  };
+
+  return AppearStaggerDirective;
+}(rxcomp.Directive);
+AppearStaggerDirective.meta = {
+  selector: '[appear-stagger]'
 };var environmentServed = {
   appKey: '8b0cae93d47a44e48e97e7fd0404be4e',
   channelName: 'BHere',
@@ -2045,8 +2106,7 @@ FlagPipe.meta = {
   _proto.onInit = function onInit() {
     var _this = this;
 
-    console.log('FooterMenuComponent.onInit');
-
+    // console.log('FooterMenuComponent.onInit');
     var _getContext = rxcomp.getContext(this),
         node = _getContext.node;
 
@@ -2074,9 +2134,8 @@ FlagPipe.meta = {
       if (keys.originalEvent) {
         keys.originalEvent.preventDefault();
         keys.originalEvent.stopPropagation();
-      }
+      } // console.log(this.current);
 
-      console.log(_this.current);
     });
     return this.wheel$(node).pipe(operators.takeUntil(this.unsubscribe$)).subscribe();
   };
@@ -2135,11 +2194,15 @@ FlagPipe.meta = {
   };
 
   _proto.onSelect = function onSelect(item) {
-    var chapterIndex = -1,
-        index = -1;
+    var _this3 = this;
+
+    var chapterIndex = 0,
+        index = 0,
+        chapter;
     this.slides.forEach(function (slide, i) {
       if (slide === item) {
         chapterIndex = i;
+        chapter = slide;
       }
 
       if (slide.items) {
@@ -2147,16 +2210,32 @@ FlagPipe.meta = {
           if (subItem === item) {
             chapterIndex = i;
             index = subIndex;
+            chapter = slide;
           }
         });
       }
     });
-    console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
-    this.nav.next({
-      item: item,
-      chapterIndex: chapterIndex,
-      index: index
-    });
+
+    if (this.current !== chapterIndex || chapter.current !== index) {
+      this.current = chapterIndex;
+      chapter.current = index;
+      this.pushChanges();
+      setTimeout(function () {
+        // console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
+        _this3.nav.next({
+          item: item,
+          chapterIndex: chapterIndex,
+          index: index
+        });
+      }, 500);
+    } else {
+      // console.log('FooterMenuComponent.onSelect', item, chapterIndex, index);
+      this.nav.next({
+        item: item,
+        chapterIndex: chapterIndex,
+        index: index
+      });
+    }
   };
 
   _proto.navTo = function navTo(index) {
@@ -2381,6 +2460,7 @@ SliderHeroComponent.meta = {
     this.resize$().pipe(operators.takeUntil(this.unsubscribe$)).subscribe(function () {
       return _this.pushChanges();
     });
+    this.subSlider = null;
   };
 
   _proto.resize$ = function resize$() {
@@ -2401,8 +2481,29 @@ SliderHeroComponent.meta = {
     node.classList.remove('content-over');
   };
 
-  _proto.navTo = function navTo(current) {
-    _SliderComponent.prototype.navTo.call(this, current);
+  _proto.navTo = function navTo(current, immediate) {
+    _SliderComponent.prototype.navTo.call(this, current, immediate);
+  };
+
+  _proto.onSubSliderInit = function onSubSliderInit(subSlider, item) {
+    // console.log('SliderMainComponent.onSubSliderInit', subSlider);
+    item.subSlider = subSlider; // this.pushChanges();
+  };
+
+  _proto.onSubSliderChange = function onSubSliderChange(index) {
+    // console.log('SliderMainComponent.onSubSliderChange', index);
+    this.subChange.next(index); // this.pushChanges();
+  };
+
+  _proto.onMenuNav = function onMenuNav(nav) {
+    // console.log('AppComponent.onMenuNav', nav);
+    _SliderComponent.prototype.navTo.call(this, nav.chapterIndex, true);
+
+    var item = this.items[nav.chapterIndex];
+
+    if (item.subSlider) {
+      item.subSlider.navTo(nav.index, true);
+    }
   };
 
   _createClass(SliderMainComponent, [{
@@ -2416,9 +2517,16 @@ SliderHeroComponent.meta = {
   }, {
     key: "wrapperStyle",
     get: function get() {
-      return {
+      var style = {
         'transform': 'translate3d(' + -this.slideWidth * this.current + 'px, 0, 0)'
       };
+
+      if (this.immediate) {
+        style.transition = 'none';
+      } // console.log('SliderMainComponent', style.transition);
+
+
+      return style;
     }
   }, {
     key: "innerStyle",
@@ -2445,7 +2553,7 @@ SliderHeroComponent.meta = {
 SliderMainComponent.meta = {
   selector: '[slider-main]',
   inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical'],
-  outputs: ['change', 'tween', 'init']
+  outputs: ['init', 'change', 'subChange']
 };var SliderVerticalComponent = /*#__PURE__*/function (_SliderComponent) {
   _inheritsLoose(SliderVerticalComponent, _SliderComponent);
 
@@ -2483,8 +2591,8 @@ SliderMainComponent.meta = {
     node.classList.remove('content-over');
   };
 
-  _proto.navTo = function navTo(current) {
-    _SliderComponent.prototype.navTo.call(this, current);
+  _proto.navTo = function navTo(current, immediate) {
+    _SliderComponent.prototype.navTo.call(this, current, immediate);
   };
 
   _createClass(SliderVerticalComponent, [{
@@ -2498,9 +2606,16 @@ SliderMainComponent.meta = {
   }, {
     key: "wrapperStyle",
     get: function get() {
-      return {
+      var style = {
         'transform': "translate3d(0, " + -this.slideHeight * this.current + "px, 0)"
       };
+
+      if (this.immediate) {
+        style.transition = 'none';
+      } // console.log('SliderVerticalComponent', style.transition);
+
+
+      return style;
     }
   }, {
     key: "innerStyle",
@@ -2527,7 +2642,7 @@ SliderMainComponent.meta = {
 SliderVerticalComponent.meta = {
   selector: '[slider-vertical]',
   inputs: ['items', 'current', 'autoplay', 'focusAutoplay', 'vertical', 'disabled'],
-  outputs: ['change', 'tween', 'init']
+  outputs: ['init', 'change']
 };var ViewClientsComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewClientsComponent, _Component);
 
@@ -2537,8 +2652,7 @@ SliderVerticalComponent.meta = {
 
   var _proto = ViewClientsComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewClientsComponent');
+  _proto.onInit = function onInit() {// console.log('ViewClientsComponent');
   };
 
   return ViewClientsComponent;
@@ -2548,7 +2662,7 @@ ViewClientsComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"container\">\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t</div>\n\t\t-->\n\t\t<div class=\"listing--clients\">\n\t\t\t<div class=\"listing__item\" *for=\"let client of item.clients\">\n\t\t\t\t<img [src]=\"client.logo\" [title]=\"client.title\" />\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"container\">\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t</div>\n\t\t-->\n\t\t<div class=\"listing--clients\" appear-stagger>\n\t\t\t<div class=\"listing__item\" *for=\"let client of item.clients\">\n\t\t\t\t<img [src]=\"client.logo\" [title]=\"client.title\" />\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewGroupComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewGroupComponent, _Component);
 
@@ -2559,13 +2673,18 @@ ViewClientsComponent.meta = {
   var _proto = ViewGroupComponent.prototype;
 
   _proto.onInit = function onInit() {
-    console.log('ViewGroupComponent');
+    // console.log('ViewGroupComponent');
     this.current = 0;
   };
 
-  _proto.onChange = function onChange(index) {
+  _proto.onSliderChange = function onSliderChange(index) {
     this.current = index;
     this.pushChanges();
+    this.change.next(index);
+  };
+
+  _proto.onSliderInit = function onSliderInit(slider) {
+    this.init.next(slider);
   };
 
   _createClass(ViewGroupComponent, [{
@@ -2581,9 +2700,10 @@ ViewClientsComponent.meta = {
 ViewGroupComponent.meta = {
   selector: '[view-group]',
   inputs: ['item'],
+  outputs: ['init', 'change'],
   template:
   /* html */
-  "\n\t\t<div class=\"slider__container slider--vertical\" [class]=\"{ 'negative': isNegative }\" (change)=\"onChange($event)\" slider-vertical [vertical]=\"true\" [items]=\"item.items\" *if=\"item.template == 'group'\">\n\t\t\t<div class=\"slider__wrapper\" [style]=\"wrapperStyle\">\n\t\t\t\t<div class=\"slider__inner\" [style]=\"innerStyle\">\n\t\t\t\t\t<div class=\"slider__slide\" *for=\"let slide of items; let index = index;\">\n\t\t\t\t\t\t<div class=\"view view--clients\" view-clients [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'clients'\"></div>\n\t\t\t\t\t\t<div class=\"view view--group\" view-group [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'group'\"></div>\n\t\t\t\t\t\t<div class=\"view view--suite\" view-suite [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'suite'\"></div>\n\t\t\t\t\t\t<div class=\"view view--tabs\" view-tabs [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'tabs'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-center\" view-text-center [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textCenter'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-graph\" view-text-graph [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textGraph'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-left\" view-text-left [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textLeft'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-map\" view-text-map [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textMap'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-right\" view-text-right [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textRight'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-two-cols\" view-text-two-cols [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textTwoCols'\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"slider__bullets\">\n\t\t\t\t<span class=\"slider__bullet\" [class]=\"{ active: index === current }\" *for=\"let slide of items; let index = index;\" (click)=\"navTo(index)\"></span>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"slider__container slider--vertical\" [class]=\"{ 'negative': isNegative }\" (init)=\"onSliderInit($event)\" (change)=\"onSliderChange($event)\" slider-vertical [vertical]=\"true\" [items]=\"item.items\" *if=\"item.template == 'group'\">\n\t\t\t<div class=\"slider__wrapper\" [style]=\"wrapperStyle\">\n\t\t\t\t<div class=\"slider__inner\" [style]=\"innerStyle\">\n\t\t\t\t\t<div class=\"slider__slide\" *for=\"let slide of items; let index = index;\">\n\t\t\t\t\t\t<div class=\"view view--clients\" view-clients [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'clients'\"></div>\n\t\t\t\t\t\t<div class=\"view view--group\" view-group [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'group'\"></div>\n\t\t\t\t\t\t<div class=\"view view--suite\" view-suite [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'suite'\"></div>\n\t\t\t\t\t\t<div class=\"view view--tabs\" view-tabs [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'tabs'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-center\" view-text-center [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textCenter'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-graph\" view-text-graph [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textGraph'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-left\" view-text-left [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textLeft'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-map\" view-text-map [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textMap'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-right\" view-text-right [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textRight'\"></div>\n\t\t\t\t\t\t<div class=\"view view--text-two-cols\" view-text-two-cols [item]=\"slide\" *if=\"!slide.hidden && slide.template == 'textTwoCols'\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"slider__bullets\">\n\t\t\t\t<span class=\"slider__bullet\" [class]=\"{ active: index === current }\" *for=\"let slide of items; let index = index;\" (click)=\"navTo(index)\"></span>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewSuiteComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewSuiteComponent, _Component);
 
@@ -2594,7 +2714,14 @@ ViewGroupComponent.meta = {
   var _proto = ViewSuiteComponent.prototype;
 
   _proto.onInit = function onInit() {
-    console.log('ViewSuiteComponent');
+    // console.log('ViewSuiteComponent');
+    // [class]="{ 'negative': item.image != null }"
+    if (this.item.image) {
+      var _getContext = getContext(this),
+          node = _getContext.node;
+
+      node.querySelector('.container-fluid').classList.add('negative');
+    }
   };
 
   return ViewSuiteComponent;
@@ -2604,7 +2731,7 @@ ViewSuiteComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" appear-stagger>\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
 };var ViewTabsComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTabsComponent, _Component);
 
@@ -2615,7 +2742,7 @@ ViewSuiteComponent.meta = {
   var _proto = ViewTabsComponent.prototype;
 
   _proto.onInit = function onInit() {
-    console.log('ViewTabsComponent');
+    // console.log('ViewTabsComponent');
     this.index = 0;
     this.slide = this.item.items[0];
   };
@@ -2644,7 +2771,14 @@ ViewTabsComponent.meta = {
   var _proto = ViewTextCenterComponent.prototype;
 
   _proto.onInit = function onInit() {
-    console.log('ViewTextCenterComponent');
+    // console.log('ViewTextCenterComponent');
+    // [class]="{ 'negative': item.image != null }"
+    if (this.item.image) {
+      var _getContext = rxcomp.getContext(this),
+          node = _getContext.node;
+
+      node.querySelector('.container-fluid').classList.add('negative');
+    }
   };
 
   return ViewTextCenterComponent;
@@ -2654,7 +2788,7 @@ ViewTextCenterComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" appear-stagger>\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"logo\" *if=\"item.logo\"><img [src]=\"item.logo\" /></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
 };var ViewTextGraphComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextGraphComponent, _Component);
 
@@ -2664,8 +2798,7 @@ ViewTextCenterComponent.meta = {
 
   var _proto = ViewTextGraphComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewTextGraphComponent');
+  _proto.onInit = function onInit() {// console.log('ViewTextGraphComponent');
   };
 
   return ViewTextGraphComponent;
@@ -2675,7 +2808,7 @@ ViewTextGraphComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewTextLeftComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextLeftComponent, _Component);
 
@@ -2685,8 +2818,7 @@ ViewTextGraphComponent.meta = {
 
   var _proto = ViewTextLeftComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewTextLeftComponent');
+  _proto.onInit = function onInit() {// console.log('ViewTextLeftComponent');
   };
 
   return ViewTextLeftComponent;
@@ -2696,7 +2828,7 @@ ViewTextLeftComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewTextMapComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextMapComponent, _Component);
 
@@ -2706,9 +2838,14 @@ ViewTextLeftComponent.meta = {
 
   var _proto = ViewTextMapComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewTextMapComponent');
-  };
+  _proto.onInit = function onInit() {// console.log('ViewTextMapComponent');
+  }
+  /*
+  getStyle(pin) {
+  	return { left: pin.x + '%', top: pin.y + '%' };
+  }
+  */
+  ;
 
   return ViewTextMapComponent;
 }(rxcomp.Component);
@@ -2717,7 +2854,7 @@ ViewTextMapComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"circle\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"background\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\">\n\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
+  "\n\t\t<!--\n\t\t<div class=\"circle\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"background\" appear-stagger>\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t\t<div class=\"pin\" [style]=\"{ left: pin.x + '%', top: pin.y + '%' }\" *for=\"let pin of item.pins;\">\n\t\t\t\t<div class=\"title\" *if=\"pin.title\" [innerHTML]=\"pin.title\"></div>\n\t\t\t\t<div class=\"abstract\" *if=\"pin.abstract\" [innerHTML]=\"pin.abstract\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"container-fluid\" appear-stagger>\n\t\t\t<div class=\"logo\" *if=\"item.logo\"><img [src]=\"item.logo\" /></div>\n\t\t\t<div class=\"title\" *if=\"item.title\" [innerHTML]=\"item.title\"></div>\n\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t</div>\n\t"
 };var ViewTextRightComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextRightComponent, _Component);
 
@@ -2727,8 +2864,7 @@ ViewTextMapComponent.meta = {
 
   var _proto = ViewTextRightComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewTextRightComponent');
+  _proto.onInit = function onInit() {// console.log('ViewTextRightComponent');
   };
 
   return ViewTextRightComponent;
@@ -2738,7 +2874,7 @@ ViewTextRightComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewTextTwoColsComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextTwoColsComponent, _Component);
 
@@ -2748,8 +2884,7 @@ ViewTextRightComponent.meta = {
 
   var _proto = ViewTextTwoColsComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewTextTwoColsComponent');
+  _proto.onInit = function onInit() {// console.log('ViewTextTwoColsComponent');
   };
 
   return ViewTextTwoColsComponent;
@@ -2759,7 +2894,7 @@ ViewTextTwoColsComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewWelcomeComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewWelcomeComponent, _Component);
 
@@ -2769,8 +2904,7 @@ ViewTextTwoColsComponent.meta = {
 
   var _proto = ViewWelcomeComponent.prototype;
 
-  _proto.onInit = function onInit() {
-    console.log('ViewWelcomeComponent');
+  _proto.onInit = function onInit() {// console.log('ViewWelcomeComponent');
   };
 
   return ViewWelcomeComponent;
@@ -2780,7 +2914,7 @@ ViewWelcomeComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"circle\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"img/logo-lg.png\" />\n\t\t</div>\n\t"
+  "\n\t\t<!--\n\t\t<div class=\"circle\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"img/logo-lg.png\" />\n\t\t</div>\n\t"
 };var AppModule = /*#__PURE__*/function (_Module) {
   _inheritsLoose(AppModule, _Module);
 
@@ -2792,6 +2926,6 @@ ViewWelcomeComponent.meta = {
 }(rxcomp.Module);
 AppModule.meta = {
   imports: [rxcomp.CoreModule],
-  declarations: [FlagPipe, FooterMenuComponent, SliderComponent, SliderMainComponent, SliderVerticalComponent, SliderGalleryComponent, SliderHeroComponent, ViewClientsComponent, ViewGroupComponent, ViewSuiteComponent, ViewTabsComponent, ViewTextCenterComponent, ViewTextGraphComponent, ViewTextLeftComponent, ViewTextMapComponent, ViewTextRightComponent, ViewTextTwoColsComponent, ViewWelcomeComponent],
+  declarations: [AppearStaggerDirective, FlagPipe, FooterMenuComponent, SliderComponent, SliderMainComponent, SliderVerticalComponent, SliderGalleryComponent, SliderHeroComponent, ViewClientsComponent, ViewGroupComponent, ViewSuiteComponent, ViewTabsComponent, ViewTextCenterComponent, ViewTextGraphComponent, ViewTextLeftComponent, ViewTextMapComponent, ViewTextRightComponent, ViewTextTwoColsComponent, ViewWelcomeComponent],
   bootstrap: AppComponent
 };rxcomp.Browser.bootstrap(AppModule);})));

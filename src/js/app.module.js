@@ -1,5 +1,6 @@
 import { CoreModule, Module } from 'rxcomp';
 import AppComponent from './app.component';
+import AppearStaggerDirective from './appear/appear-stagger.directive';
 import FlagPipe from './flag/flag.pipe';
 import FooterMenuComponent from './footer/footer-menu.component';
 import SliderGalleryComponent from './slider/slider-gallery.component';
@@ -26,6 +27,7 @@ AppModule.meta = {
 		CoreModule,
 	],
 	declarations: [
+		AppearStaggerDirective,
 		FlagPipe,
 		FooterMenuComponent,
 		SliderComponent,

@@ -3,7 +3,7 @@ import { Component } from 'rxcomp';
 export default class ViewClientsComponent extends Component {
 
 	onInit() {
-		console.log('ViewClientsComponent');
+		// console.log('ViewClientsComponent');
 	}
 
 }
@@ -13,7 +13,7 @@ ViewClientsComponent.meta = {
 	inputs: ['item'],
 	template: /* html */ `
 		<div class="background">
-			<img loading="lazy" [src]="item.image" ondragstart="return false;" />
+			<img data-loading="lazy" [src]="item.image" ondragstart="return false;" />
 		</div>
 		<!--
 		<div class="container">
@@ -21,7 +21,7 @@ ViewClientsComponent.meta = {
 			<div class="abstract" [innerHTML]="item.abstract"></div>
 		</div>
 		-->
-		<div class="listing--clients">
+		<div class="listing--clients" appear-stagger>
 			<div class="listing__item" *for="let client of item.clients">
 				<img [src]="client.logo" [title]="client.title" />
 			</div>
