@@ -1,0 +1,117 @@
+.icon--logo {
+	width: 355px;
+	height: 60px;
+}
+
+.icon--valves {
+	width: 96px;
+	height: 96px;
+}
+
+.icon--taps {
+	width: 96px;
+	height: 96px;
+}
+
+.icon--radiant {
+	width: 96px;
+	height: 96px;
+}
+
+.icon--thermo {
+	width: 96px;
+	height: 96px;
+}
+
+.icon--bim {
+	width: 98px;
+	height: 98px;
+}
+
+.icon--tiemme-lab {
+	width: 96px;
+	height: 96px;
+}
+
+.icon--caret-down {
+	width: 8px;
+	height: 5px;
+}
+
+.icon--caret-right {
+	width: 8px;
+	height: 12px;
+}
+
+.icon--websolute {
+	width: 20px;
+	height: 20px;
+}
+
+.icon--search {
+	width: 21px;
+	height: 23px;
+}
+
+.icon--bullet {
+	width: 18px;
+	height: 18px;
+}
+
+.icon--expand {
+	width: 29px;
+	height: 30px;
+}
+
+.icon--download {
+	width: 9px;
+	height: 13px;
+}
+
+/*
+.icon--facebook {
+	width: 8px;
+	height: 17px;
+}
+
+.icon--youtube {
+	width: 23px;
+	height: 17px;
+}
+
+.icon--linkedin {
+	width: 18px;
+	height: 17px;
+}
+*/
+
+.icon--languages,
+.icon--upload,
+.icon--insights,
+.icon--guides,
+.icon--user,
+.icon--back,
+.icon--whatsapp,
+.icon--twitter,
+.icon--linkedin,
+.icon--website-2,
+.icon--facebook,
+.icon--pin,
+.icon--map,
+.icon--website,
+.icon--email,
+.icon--fax,
+.icon--mobile,
+.icon--telephone,
+.icon--youtube,
+.icon--company,
+.icon--world,
+.icon--export,
+.icon--branches {
+	width: 24px;
+	height: 24px;
+}
+
+[class^="icon"] {
+	fill: $foreground;
+}

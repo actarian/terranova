@@ -1,0 +1,19 @@
+$grid-columns: 12 !default;
+$grid-gutter-widths: (xs: 12rem,
+	sm: 12rem,
+	md: 12rem,
+	lg: 12rem,
+	xl: 12rem) !default;
+$grid-breakpoints: (xs: 0,
+	sm: 768px,
+	md: 1024px,
+	lg: 1440px,
+	xl: 1920px) !default;
+$container-max-widths: (sm: calc(100vw - 48rem),
+	md: 960px,
+	lg: 1200px,
+	xl: 1440px) !default; // calc(100vw - 300px)) !default;
+$container-fluid-max-widths: (sm: calc(100vw - 48rem),
+	md: calc(100vw - 48rem),
+	lg: calc(100vw - 48rem),
+	xl: calc(100vw - 48rem)) !default; // calc(100vw - 300px)) !default;

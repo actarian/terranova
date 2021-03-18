@@ -1,0 +1,14 @@
+@import 'fonts';
+@import 'mixins';
+
+@import '_components/reset';
+@import '_components/base';
+@import '_components/grid';
+@import '_components/typography';
+@import '_components/buttons';
+@import '_components/navs';
+@import '_components/slider';
+
+@import '_pages/slider';
+@import '_pages/index';
+@import '_pages/footer';

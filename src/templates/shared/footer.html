@@ -1,0 +1,17 @@
+<!-- footer -->
+<div class="footer__menu" footer-menu [slides]="slides" (nav)="onMenuNav($event)" *if="showMenu"></div>
+<footer class="footer">
+	<div class="group--left">
+		<img src="img/logo.png" title="Terranova" (click)="onNavToChapter(0)" />
+	</div>
+	<div class="group--center">
+		<button type="button" class="btn--menu" (click)="onToggleMenu()">
+			<img src="img/badge.png" />
+		</button>
+	</div>
+	<div class="group--right">
+		<button type="button" class="btn--chapter" (click)="onNextChapter()" *if="nextChapter">
+			<span [innerHTML]="nextChapter.name"></span> <svg class="arrow-right-thin"><use xlink:href="#arrow-right-thin"></use></svg>
+		</button>
+	</div>
+</footer>

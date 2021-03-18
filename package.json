@@ -1,0 +1,24 @@
+{
+  "author": "Luca Zampetti <lzampetti@gmail.com>",
+  "name": "more",
+  "description": "more",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/actarian/more.git"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {},
+  "dependencies": {
+    "gsap": "3.6.0",
+    "rxcomp": "1.0.0-beta.20",
+    "rxjs": "6.6.6",
+    "three": "0.126.1"
+  },
+  "devDependencies": {
+    "gulpfile-config": "1.0.0-alpha.14"
+  }
+}

@@ -1,0 +1,42 @@
+<!-- @@master = ./templates/layout.html { "baseHref": "/more/" } -->
+<!-- @@block = main-->
+<div class="page">
+
+	<div class="slider__container slider--main" slider-main [items]="slides" (init)="onSliderInit($event)" (change)="onSliderChange($event)"><!--  [autoplay]="5000" -->
+		<div class="slider__wrapper" [style]="wrapperStyle">
+			<div class="slider__inner" [style]="innerStyle">
+				<div class="slider__slide" *for="let item of items; let index = index;">
+					<div class="view view--clients" view-clients [item]="item" *if="!item.hidden && item.template == 'clients'"></div>
+					<div class="view view--group" view-group [item]="item" *if="!item.hidden && item.template == 'group'"></div>
+					<div class="view view--suite" view-suite [item]="item" *if="!item.hidden && item.template == 'suite'"></div>
+					<div class="view view--tabs" view-tabs [item]="item" *if="!item.hidden && item.template == 'tabs'"></div>
+					<div class="view view--text-center" view-text-center [item]="item" *if="!item.hidden && item.template == 'textCenter'"></div>
+					<div class="view view--text-graph" view-text-graph [item]="item" *if="!item.hidden && item.template == 'textGraph'"></div>
+					<div class="view view--text-left" view-text-left [item]="item" *if="!item.hidden && item.template == 'textLeft'"></div>
+					<div class="view view--text-map" view-text-map [item]="item" *if="!item.hidden && item.template == 'textMap'"></div>
+					<div class="view view--text-right" view-text-right [item]="item" *if="!item.hidden && item.template == 'textRight'"></div>
+					<div class="view view--text-two-cols" view-text-two-cols [item]="item" *if="!item.hidden && item.template == 'textTwoCols'"></div>
+					<div class="view view--welcome" view-welcome [item]="item" *if="!item.hidden && item.template == 'welcome'"></div>
+				</div>
+			</div>
+		</div>
+		<div class="slider__bullets">
+			<span class="slider__bullet" [class]="{ active: index === current }" *for="let item of items; let index = index;" (click)="navTo(index)"></span>
+		</div>
+		<div class="slider__pagination" appear-stagger>
+			<div class="group--right">
+				<button type="button" class="btn--prev" [class]="{ disabled: !hasPrev() }" (click)="navTo(current - 1)">
+					<svg class="arrow-prev"><use xlink:href="#arrow-prev"></use></svg>
+				</button>
+				<button type="button" class="btn--next" [class]="{ disabled: !hasNext() }" (click)="navTo(current + 1)">
+					<svg class="arrow-next"><use xlink:href="#arrow-next"></use></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!--
+		https://stock.adobe.com/it/images/map-of-world/4541070
+		https://stock.adobe.com/it/images/3d-map-of-world-template-for-your-design/353446961?asset_id=353446961
+	-->
+</div>
+<!-- @@close-->
