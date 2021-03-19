@@ -1,6 +1,6 @@
 import { Component, getContext } from 'rxcomp';
 import { fromEvent } from 'rxjs';
-import { takeUntil, tap, throttleTime } from 'rxjs/operators';
+import { filter, takeUntil, tap, throttleTime } from 'rxjs/operators';
 import KeyboardService from '../keyboard/keyboard.service';
 
 export default class FooterMenuComponent extends Component {
@@ -15,7 +15,8 @@ export default class FooterMenuComponent extends Component {
 			chapter.current = 0;
 		});
 		KeyboardService.keys$().pipe(
-			takeUntil(this.unsubscribe$)
+			filter(_ => this.active),
+			takeUntil(this.unsubscribe$),
 		).subscribe(keys => {
 			if (keys.ArrowRight) {
 				this.nextChapter();
@@ -37,8 +38,18 @@ export default class FooterMenuComponent extends Component {
 			// console.log(this.current);
 		});
 		return this.wheel$(node).pipe(
+			filter(_ => this.active),
 			takeUntil(this.unsubscribe$)
 		).subscribe();
+	}
+
+	onChanges() {
+		this.current = this.chapterIndex;
+		const chapter = this.slides[this.current];
+		if (chapter) {
+			chapter.current = this.itemIndex;
+			console.log('FooterMenuComponent.onChanges', this.current, chapter.current);
+		}
 	}
 
 	wheel$(target) {
@@ -125,12 +136,11 @@ export default class FooterMenuComponent extends Component {
 		this.current = index;
 		this.pushChanges();
 	}
-
 }
 
 FooterMenuComponent.meta = {
 	selector: '[footer-menu]',
-	inputs: ['slides'],
+	inputs: ['slides', 'active', 'chapterIndex', 'itemIndex'],
 	outputs: ['nav'],
 	template: /* html */ `
 		<div class="circle">
@@ -140,15 +150,15 @@ FooterMenuComponent.meta = {
 			<img src="img/logo-lg.png" />
 		</div>
 		<div class="listing--menu" [style]="{ transform: 'translateX(' + -76 * current + 'rem)' }">
-			<div class="listing__item" *for="let chapter of slides; let chapterIndex = index;">
+			<div class="listing__item" *for="let chapter of slides; let c = index;">
 				<div class="listing--submenu" [style]="{ transform: 'translateY(' + -25 * chapter.current + 'rem)' }" *if="chapter.items && chapter.items.length">
-					<div class="listing__item" *for="let item of chapter.items; let itemIndex = index;">
-						<div class="card--menu" [class]="{ active: chapterIndex === current && itemIndex === chapter.current }" (click)="onSelect(item)">
+					<div class="listing__item" *for="let item of chapter.items; let i = index;">
+						<div class="card--menu" [class]="{ active: c === current && i === chapter.current }" (click)="onSelect(item)">
 							<span [innerHTML]="item.name" ></span>
 						</div>
 					</div>
 				</div>
-				<div class="card--menu" [class]="{ active: chapterIndex === current }" (click)="onSelect(chapter)" *if="!chapter.items || !chapter.items.length">
+				<div class="card--menu" [class]="{ active: c === current }" (click)="onSelect(chapter)" *if="!chapter.items || !chapter.items.length">
 					<span [innerHTML]="chapter.name"></span>
 				</div>
 			</div>

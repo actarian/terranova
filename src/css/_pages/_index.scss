@@ -134,9 +134,10 @@ img {
 		}
 	}
 
-	.slider__slide.active > & {
-		& > .container,
-		& > .container-fluid {
+	.slider__slide.active>& {
+
+		&>.container,
+		&>.container-fluid {
 			.title {
 				&:before {
 					transform: scale(1, 1);
@@ -176,6 +177,13 @@ img {
 		&>img {
 			max-width: 50rem;
 		}
+	}
+}
+
+.view--text-graph {
+	.domain,
+	.tick line {
+		visibility: hidden;
 	}
 }
 

@@ -1,5 +1,5 @@
 <!-- footer -->
-<div class="footer__menu" [class]="{ active: showMenu }" footer-menu [slides]="slides" (nav)="onMenuNav($event)"></div>
+<div class="footer__menu" [class]="{ active: showMenu }" footer-menu [slides]="slides" [active]="showMenu" [chapterIndex]="chapterIndex" [itemIndex]="itemIndex" (nav)="onMenuNav($event)"></div>
 <footer class="footer">
 	<div class="group--left">
 		<img class="logo" src="img/logo.png" title="Terranova" (click)="onNavToChapter(0)" />

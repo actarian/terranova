@@ -1,5 +1,6 @@
 import { Component, getContext } from 'rxcomp';
-import { first, takeUntil } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
+import { first, takeUntil, tap, throttleTime } from 'rxjs/operators';
 import { Templates } from './api/api.data';
 // import { DATA } from './api/api.data';
 import { ApiService } from './api/api.service';
@@ -20,24 +21,22 @@ export default class AppComponent extends Component {
 		const { node } = getContext(this);
 		node.classList.remove('hidden');
 
+		this.slider = null;
+		this.subSlider = null;
+		this.chapterIndex = 0;
+		this.itemIndex = 0;
 		this.showMenu = false;
 		this.templates = Templates;
-
 		// this.slides = DATA;
 		// this.items = this.collectItems(this.slides);
-
 		this.slides = [];
 		this.items = [];
-
 		ApiService.data$().pipe(
 			first(),
 		).subscribe(data => {
 			this.slides = data;
 			this.items = this.collectItems(this.slides);
 		});
-
-		this.slider = null;
-		this.subSlider = null;
 
 		/*
 		this.slides = new Array(4).fill(0).map((_, i) => {
@@ -58,6 +57,26 @@ export default class AppComponent extends Component {
 				this.onToggleMenu();
 			}
 		});
+		this.resize$().pipe(
+			takeUntil(this.unsubscribe$)
+		).subscribe();
+	}
+
+	resize$() {
+		const html = document.querySelector('html');
+		let t;
+		return fromEvent(window, 'resize').pipe(
+			throttleTime(200),
+			tap(_ => {
+				html.classList.add('resizing');
+				if (t) {
+					clearTimeout(t);
+				}
+				t = setTimeout(() => {
+					html.classList.remove('resizing');
+				}, 200);
+			}),
+		)
 	}
 
 	collectItems(slides, items = []) {
@@ -77,12 +96,18 @@ export default class AppComponent extends Component {
 
 	onSliderChange(index) {
 		// console.log('AppComponent.onSliderChange', index);
+		this.chapterIndex = index;
+		const chapter = this.slides[index];
+		if (chapter) {
+			this.itemIndex = chapter.current;
+		}
 		this.showMenu = false;
 		this.pushChanges();
 	}
 
 	onSubSliderChange(index) {
 		// console.log('AppComponent.onSubSliderChange', index);
+		this.itemIndex = index;
 		this.showMenu = false;
 		this.pushChanges();
 	}

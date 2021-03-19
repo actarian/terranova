@@ -13,6 +13,7 @@
   },
   "scripts": {},
   "dependencies": {
+    "d3": "6.6.0",
     "gsap": "3.6.0",
     "rxcomp": "1.0.0-beta.20",
     "rxjs": "6.6.6",

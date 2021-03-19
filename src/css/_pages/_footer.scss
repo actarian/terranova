@@ -79,7 +79,7 @@
 	.slider__bullets {
 		position: absolute;
 		left: 50%;
-		bottom: 0;
+		bottom: -2px;
 		margin: 0;
 		z-index: 100;
 		height: 50px;
@@ -155,7 +155,7 @@
 	margin-bottom: 5rem;
 	border-radius: 0.8rem;
 	box-shadow: 0 1rem 2rem 0 rgba(8, 31, 55, 0.1);
-	transition: all ease-in-out 350ms;
+	transition: box-shadow ease-in-out 350ms;
 	box-sizing: border-box;
 	cursor: pointer;
 
@@ -181,6 +181,7 @@
 		}
 	}
 
+	/*
 	&:after {
 		content: '';
 		box-sizing: border-box;
@@ -194,6 +195,7 @@
 		// border: 1px solid transparent;
 		transition: all ease-in-out 350ms;
 	}
+	*/
 
 	&.active {
 		box-shadow: 0 3rem 6rem 0 rgba(8, 31, 55, 0.5);
