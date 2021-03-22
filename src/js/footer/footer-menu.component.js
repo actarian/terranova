@@ -48,7 +48,7 @@ export default class FooterMenuComponent extends Component {
 		const chapter = this.slides[this.current];
 		if (chapter) {
 			chapter.current = this.itemIndex;
-			console.log('FooterMenuComponent.onChanges', this.current, chapter.current);
+			// console.log('FooterMenuComponent.onChanges', this.current, chapter.current);
 		}
 	}
 

@@ -1,16 +1,17 @@
 import { max, range } from 'd3-array';
 import { axisBottom } from 'd3-axis';
-import { scaleBand, scaleLinear } from 'd3-scale';
-import { create } from 'd3-selection';
-import { Component, getContext } from 'rxcomp';
-import { from } from 'rxjs';
-import { first } from 'rxjs/operators';
 // import { interpolateHcl } from 'd3-interpolate';
 // import { extent, max, min } from 'd3-array';
 // import { ScaleLinear, scaleLinear, ScaleTime, scaleUtc } from 'd3-scale';
 // import { mouse, select, Selection } from 'd3-selection';
 // import { timeDay, timeDays, timeMonth, timeMonths } from 'd3-time';
-// import { transition } from 'd3-transition';
+import { easeQuadInOut } from 'd3-ease';
+import { scaleBand, scaleLinear } from 'd3-scale';
+import { create } from 'd3-selection';
+import { transition } from 'd3-transition';
+import { Component, getContext } from 'rxcomp';
+import { from } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 export default class ViewTextGraphComponent extends Component {
 
@@ -20,14 +21,33 @@ export default class ViewTextGraphComponent extends Component {
 		this.loadChart$().pipe(
 			first(),
 		).subscribe(data => {
-			// console.log('data', data, this.item.graph.data);
-			data = this.item.graph.data;
-			const format = this.item.graph.format;
-			const chart = this.makeChart(data, format);
-			const { node } = getContext(this);
-			const graph = node.querySelector('.graph');
-			graph.appendChild(chart);
+			this.data = this.item.graph.data;
 		});
+	}
+
+	onChanges() {
+		if (this.chart) {
+			this.chart.remove();
+		}
+		if (this.to) {
+			clearTimeout(this.to);
+		}
+		this.to = setTimeout(() => {
+			if (this.isVisible) {
+				const data = this.item.graph.data;
+				const format = this.item.graph.format;
+				const chart = this.chart = this.makeChart(data, format);
+				const { node } = getContext(this);
+				const graph = node.querySelector('.graph');
+				graph.appendChild(chart);
+			}
+		}, 200);
+	}
+
+	get isVisible() {
+		const { node } = getContext(this);
+		const rect = node.getBoundingClientRect();
+		return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
 	}
 
 	loadChart$() {
@@ -44,6 +64,12 @@ export default class ViewTextGraphComponent extends Component {
 			});
 			return data;
 		}));
+	}
+
+	getTransition() {
+		return transition()
+			.duration(750)
+			.ease(easeQuadInOut);
 	}
 
 	makeChart(data, format) {
@@ -91,9 +117,15 @@ export default class ViewTextGraphComponent extends Component {
 			.join('rect')
 			.attr('rx', 4.5)
 			.attr('x', (d, i) => x(i))
+			.attr('width', x.bandwidth())
+			.attr('y', d => y(d.value) + y(0) - y(d.value))
+			.transition()
+			.duration(450)
+			.ease(easeQuadInOut)
+			.delay((d, i) => i * 50)
 			.attr('y', d => y(d.value))
 			.attr('height', d => y(0) - y(d.value))
-			.attr('width', x.bandwidth());
+			;
 
 		svg.append('g')
 			.attr('fill', color)
@@ -102,11 +134,18 @@ export default class ViewTextGraphComponent extends Component {
 			.join('text')
 			.attr('dy', '.75em')
 			.attr('x', (d, i) => x(i) + x.bandwidth() / 2)
-			.attr('y', d => y(d.value) - 20)
+			.attr('y', d => y(d.value) - 30)
+			.attr('opacity', '0')
 			.attr('text-anchor', 'middle')
 			.attr('font-size', '1.8rem')
 			.attr('font-weight', '700')
 			.text(d => format.replace('%', d.value))
+			.transition()
+			.duration(350)
+			.ease(easeQuadInOut)
+			.delay((d, i) => 450 + i * 50)
+			.attr('y', d => y(d.value) - 20)
+			.attr('opacity', '1')
 
 		svg.append('g')
 			.call(xAxis);

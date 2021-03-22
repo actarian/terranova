@@ -5,9 +5,20 @@
 		<img class="logo" src="img/logo.png" title="Terranova" (click)="onNavToChapter(0)" />
 	</div>
 	<div class="group--center">
+		<div class="group--chapter">
+			<!--
+			<button type="button" class="btn--chapter" (click)="onPreviousChapter()" *if="previousChapter">
+				<svg class="arrow-left-thin"><use xlink:href="#arrow-left-thin"></use></svg>
+			</button>
+			-->
+			<div class="btn--chapter">
+				<span [innerHTML]="currentChapter.name"></span>
+			</div>
+		</div>
 		<button type="button" class="btn--menu" (click)="onToggleMenu()">
 			<img src="img/badge.png" />
 		</button>
+		<div class="group--chapter"></div>
 	</div>
 	<div class="group--right">
 		<button type="button" class="btn--chapter" (click)="onNextChapter()" *if="nextChapter">

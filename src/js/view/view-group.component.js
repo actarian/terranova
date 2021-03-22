@@ -3,7 +3,6 @@ import { Component } from 'rxcomp';
 export default class ViewGroupComponent extends Component {
 
 	onInit() {
-		// console.log('ViewGroupComponent');
 		this.current = 0;
 	}
 

@@ -23,7 +23,7 @@ export class Environment {
 	}
 	set STATIC(STATIC) {
 		ENV.STATIC = (STATIC === true || STATIC === 'true');
-		console.log('Environment.STATIC.set', ENV.STATIC);
+		// console.log('Environment.STATIC.set', ENV.STATIC);
 	}
 
 	get href() {

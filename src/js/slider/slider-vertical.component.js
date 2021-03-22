@@ -35,6 +35,29 @@ export default class SliderVerticalComponent extends SliderComponent {
 		).subscribe(() => this.pushChanges());
 	}
 
+	resolveInitialIndex() {
+		let initialIndex = 0;
+		const hash = window.location.hash;
+		if (hash) {
+			const index = this.items.reduce((p, c, i) => {
+				if (p === -1) {
+					if (hash.indexOf(c.slug) === 1) {
+						return i;
+					} else {
+						return p;
+					}
+				} else {
+					return p;
+				}
+			}, -1);
+			if (index !== -1) {
+				initialIndex = index;
+			}
+			console.log('SliderVerticalComponent.parseLocation.index', hash, initialIndex);
+		}
+		return initialIndex;
+	}
+
 	resize$() {
 		return fromEvent(window, 'resize');
 	}

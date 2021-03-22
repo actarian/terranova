@@ -19,15 +19,27 @@ export default class LocationService {
 		} else {
 			params.set(keyOrValue, '');
 		}
-		this.replace(params);
+		this.pushState(params);
 		// console.log('LocationService.set', params, keyOrValue, value);
 	}
 
-	static replace(params) {
+	static pushState(params, hash) {
 		if (window.history && window.history.pushState) {
 			const title = document.title;
-			const url = `${window.location.href.split('?')[0]}?${params.toString()}`;
-			window.history.pushState(params.toString(), title, url);
+			const url = `${window.location.origin}${window.location.pathname}${params ? '?' + params.toString() : ''}${hash ? '#' + hash : ''}`;
+			const state = params ? params.toString() : (hash ? ({ slug: hash }) : null);
+			window.history.pushState(state, title, url);
+			console.log('pushState', params, hash, state, title, url);
+		}
+	}
+
+	static replaceState(params, hash) {
+		if (window.history && window.history.replaceState) {
+			const title = document.title;
+			const url = `${window.location.origin}${window.location.pathname}${params ? '?' + params.toString() : ''}${hash ? '#' + hash : ''}`;
+			// console.log(url, hash);
+			const state = params ? params.toString() : hash ? { slug: hash } : null;
+			window.history.replaceState(state, title, url);
 		}
 	}
 
@@ -67,4 +79,22 @@ export default class LocationService {
 		return encoded;
 	}
 
+	static toSlug(text) {
+		return text.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
+	}
+
+	static onPopState(callback) {
+		const stopBrowserBack = callback => {
+			window.history.pushState(null, '', window.location.href);
+			window.onpopstate = () => {
+				window.history.pushState(null, '', window.location.href);
+				callback();
+			};
+		};
+		return stopBrowserBack(callback);
+		const startBrowserBack = () => {
+			window.onpopstate = undefined;
+			window.history.back();
+		};
+	}
 }

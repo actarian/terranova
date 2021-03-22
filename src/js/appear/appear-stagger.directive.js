@@ -13,7 +13,7 @@ export default class AppearStaggerDirective extends Directive {
 		const { node } = getContext(this);
 		IntersectionService.firstIntersection$(node).pipe(
 			takeUntil(this.unsubscribe$),
-		).subscribe(src => {
+		).subscribe(_ => {
 			node.classList.add('appeared');
 		});
 	}

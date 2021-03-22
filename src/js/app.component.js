@@ -5,6 +5,7 @@ import { Templates } from './api/api.data';
 // import { DATA } from './api/api.data';
 import { ApiService } from './api/api.service';
 import KeyboardService from './keyboard/keyboard.service';
+import LocationService from './location/location.service';
 import SliderComponent from './slider/slider.component';
 
 export default class AppComponent extends Component {
@@ -20,7 +21,6 @@ export default class AppComponent extends Component {
 	onInit() {
 		const { node } = getContext(this);
 		node.classList.remove('hidden');
-
 		this.slider = null;
 		this.subSlider = null;
 		this.chapterIndex = 0;
@@ -36,8 +36,13 @@ export default class AppComponent extends Component {
 		).subscribe(data => {
 			this.slides = data;
 			this.items = this.collectItems(this.slides);
+			const html = document.querySelector('html');
+			html.classList.add('resizing');
+			setTimeout(() => {
+				html.classList.remove('resizing');
+			});
+			console.log(this.slides);
 		});
-
 		/*
 		this.slides = new Array(4).fill(0).map((_, i) => {
 			return {
@@ -60,6 +65,29 @@ export default class AppComponent extends Component {
 		this.resize$().pipe(
 			takeUntil(this.unsubscribe$)
 		).subscribe();
+		/*
+		LocationService.onPopState((event) => {
+			console.log('onPopState', event);
+		});
+		*/
+	}
+
+	updateLocation() {
+		let url = '', title = '';
+		const currentItem = this.currentItem;
+		if (currentItem) {
+			url = currentItem.slug;
+			title = currentItem.documentTitle;
+		} else {
+			const currentChapter = this.currentChapter;
+			if (currentChapter) {
+				url = currentChapter.slug;
+				title = currentChapter.documentTitle;
+			}
+		}
+		document.title = title;
+		LocationService.replaceState(null, url);
+		console.log('AppComponent.updateLocation', title, url);
 	}
 
 	resize$() {
@@ -92,6 +120,7 @@ export default class AppComponent extends Component {
 	onSliderInit(slider) {
 		// console.log('AppComponent.onSliderInit', slider);
 		this.slider = slider;
+		this.chapterIndex = slider.current;
 	}
 
 	onSliderChange(index) {
@@ -102,6 +131,7 @@ export default class AppComponent extends Component {
 			this.itemIndex = chapter.current;
 		}
 		this.showMenu = false;
+		this.updateLocation();
 		this.pushChanges();
 	}
 
@@ -109,17 +139,8 @@ export default class AppComponent extends Component {
 		// console.log('AppComponent.onSubSliderChange', index);
 		this.itemIndex = index;
 		this.showMenu = false;
+		this.updateLocation();
 		this.pushChanges();
-	}
-
-	onNextChapter() {
-		if (this.slider.hasNext()) {
-			this.slider.navTo(this.slider.current + 1);
-		}
-	}
-
-	onNavToChapter(index) {
-		this.slider.navTo(index);
 	}
 
 	onToggleMenu() {
@@ -135,6 +156,28 @@ export default class AppComponent extends Component {
 		// this.slider.navTo(nav.chapterIndex);
 	}
 
+	onPreviousChapter() {
+		if (this.slider.hasPrev()) {
+			this.slider.navTo(this.slider.current - 1);
+		}
+	}
+
+	onNextChapter() {
+		if (this.slider.hasNext()) {
+			this.slider.navTo(this.slider.current + 1);
+		}
+	}
+
+	onNavToChapter(index) {
+		this.slider.navTo(index);
+	}
+
+	get previousChapter() {
+		if (this.slider && this.slider.hasPrev()) {
+			return this.slides[this.slider.current - 1];
+		}
+	}
+
 	get currentChapter() {
 		if (this.slider) {
 			return this.slides[this.slider.current];
@@ -145,6 +188,11 @@ export default class AppComponent extends Component {
 		if (this.slider && this.slider.hasNext()) {
 			return this.slides[this.slider.current + 1];
 		}
+	}
+
+	get currentItem() {
+		const currentChapter = this.currentChapter;
+		return (currentChapter && currentChapter.items && currentChapter.current != null) ? currentChapter.items[currentChapter.current] : null;
 	}
 }
 

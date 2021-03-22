@@ -13,13 +13,19 @@ export const SliderAutoplayMode = {
 
 export default class SliderComponent extends Component {
 
+	get state() {
+		if (!this.state_) {
+			this.state_ = { current: 0 };
+		}
+		return this.state_;
+	}
 	get current() { return this.getCurrent(); }
 	set current(current) { this.setCurrent(current); }
 
 	get isVisible() {
 		const { node } = getContext(this);
 		const rect = node.getBoundingClientRect();
-		return rect.left < window.innerWidth && rect.right > 0;
+		return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
 	}
 
 	getCurrent() {
@@ -34,7 +40,9 @@ export default class SliderComponent extends Component {
 		if (!this.state) {
 			this.state = { current: 0 };
 		}
-		if (this.state.current !== current) {
+		if (!this.container) {
+			this.state = { current };
+		} else if (this.state.current !== current) {
 			this.state.current = current;
 			this.change.next(current);
 		}
@@ -110,6 +118,7 @@ export default class SliderComponent extends Component {
 			items = Array.prototype.slice.call(node.querySelectorAll('.slider__slide'));
 		}
 		this.items = items;
+		this.state.current = this.resolveInitialIndex();
 		// console.log('SliderComponent.onInit', this.items);
 		this.userGesture = false;
 		// this.userGesture$ = new Subject();
@@ -177,7 +186,12 @@ export default class SliderComponent extends Component {
 		setTimeout(() => {
 			this.setActiveState();
 		}, 500);
+		// console.log('Slider', this.current);
 		this.init.next(this);
+	}
+
+	resolveInitialIndex() {
+		return 0;
 	}
 
 	changed$() {
@@ -214,7 +228,7 @@ export default class SliderComponent extends Component {
 				}
 			}),
 			filter(_ => this.isVisible),
-			throttleTime(200),
+			throttleTime(1000),
 			tap((event) => {
 				if (event.deltaY > 0) {
 					if (this.hasNext()) {
