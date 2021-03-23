@@ -602,7 +602,8 @@ img {
 	.listing--values,
 	.graph,
 	.logo {
-		opacity: 0 !important;
+		display: none;
+		// opacity: 0 !important;
 		animation: none !important;
 	}
 }

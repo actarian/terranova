@@ -3701,7 +3701,7 @@ img {
 .slider__slide > .view .listing--values,
 .slider__slide > .view .graph,
 .slider__slide > .view .logo {
-  opacity: 0 !important;
+  display: none;
   animation: none !important; }
 
 .footer {
