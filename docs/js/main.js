@@ -2097,29 +2097,13 @@ AppComponent.meta = {
 AppearStaggerDirective.meta = {
   selector: '[appear-stagger]'
 };var environmentServed = {
-  appKey: '8b0cae93d47a44e48e97e7fd0404be4e',
-  channelName: 'BHere',
   flags: {
-    production: true,
-    useProxy: false,
-    useToken: false,
-    selfService: true,
-    guidedTourRequest: true,
-    editor: false,
-    editorAssetScreen: false,
-    ar: true,
-    menu: true,
-    chat: false,
-    attendee: true,
-    streamer: true,
-    viewer: true,
-    smartDevice: true,
-    maxQuality: false
+    production: true
   },
   logo: null,
   background: {
-    image: '/Modules/more/Client/docs/img/background.jpg',
-    video: '/Modules/more/Client/docs/img/background.mp4'
+    image: '/Client/docs/img/background.jpg',
+    video: '/Client/docs/img/background.mp4'
   },
   colors: {
     menuBackground: '#000000',
@@ -2131,70 +2115,22 @@ AppearStaggerDirective.meta = {
     menuBackOverBackground: '#0099ff',
     menuBackOverForeground: '#ffffff'
   },
-  editor: {
-    disabledViewTypes: ['waiting-room', 'room-3d'],
-    disabledViewItemTypes: ['texture']
-  },
-  assets: '/Modules/more/Client/docs/',
-  worker: '/Modules/more/Client/docs/js/workers/image.service.worker.js',
-  githubDocs: 'https://raw.githubusercontent.com/actarian/more/more-ws-new/docs/',
-  language: '/it',
-  market: '/it',
+  assets: '/Client/docs/',
+  worker: '/Client/docs/js/workers/image.service.worker.js',
+  githubDocs: 'https://raw.githubusercontent.com/actarian/terranova/main/docs/',
   url: {
-    index: '/',
-    access: '/',
-    editor: '/editor',
-    selfServiceTour: '/self-service-tour',
-    guidedTour: '/guided-tour',
-    accessCode: '/access-code'
-  },
-  template: {
-    tryInAr: '/template/modules/more/try-in-ar.cshtml?viewId=$viewId',
-    modal: {
-      controlRequest: '/template/modules/more/control-request-modal.cshtml',
-      tryInAr: '/template/modules/more/try-in-ar-modal.cshtml',
-      view: {
-        'panorama': '/template/modules/more/panorama-modal.cshtml',
-        'panorama-grid': '/template/modules/more/panorama-grid-modal.cshtml',
-        'room-3d': '/template/modules/more/room-3d-modal.cshtml',
-        'model': '/template/modules/more/model-modal.cshtml'
-      },
-      viewItem: {
-        'nav': '/template/modules/more/nav-modal.cshtml',
-        'plane': '/template/modules/more/plane-modal.cshtml',
-        'curved-plane': '/template/modules/more/curved-plane-modal.cshtml',
-        'texture': '/template/modules/more/texture-modal.cshtml',
-        'model': '/template/modules/more/item-model-modal.cshtml'
-      },
-      remove: '/template/modules/more/remove-modal.cshtml'
-    }
+    index: '/'
   },
   languages: ['en'],
   defaultLanguage: 'en'
 };var environmentStatic = {
-  appKey: '8b0cae93d47a44e48e97e7fd0404be4e',
-  channelName: 'BHere',
   flags: {
-    production: false,
-    useProxy: true,
-    useToken: false,
-    selfService: true,
-    guidedTourRequest: true,
-    editor: true,
-    editorAssetScreen: true,
-    ar: true,
-    menu: true,
-    chat: true,
-    attendee: true,
-    streamer: true,
-    viewer: true,
-    smartDevice: true,
-    maxQuality: false
+    production: false
   },
   logo: null,
   background: {
-    image: '/more/img/background.jpg',
-    video: '/more/img/background.mp4'
+    image: '/terranova/img/background.jpg',
+    video: '/terranova/img/background.mp4'
   },
   colors: {
     menuBackground: '#000000',
@@ -2206,43 +2142,11 @@ AppearStaggerDirective.meta = {
     menuBackOverBackground: '#0099ff',
     menuBackOverForeground: '#ffffff'
   },
-  editor: {
-    disabledViewTypes: ['waiting-room', 'room-3d'],
-    disabledViewItemTypes: ['texture']
-  },
-  assets: '/more/',
+  assets: '/terranova/',
   worker: './js/workers/image.service.worker.js',
-  githubDocs: 'https://raw.githubusercontent.com/actarian/more/more-ws-new/docs/',
-  language: '',
-  market: '',
+  githubDocs: 'https://raw.githubusercontent.com/actarian/terranova/main/docs/',
   url: {
-    index: '/',
-    access: '/',
-    editor: '/editor',
-    selfServiceTour: '/self-service-tour',
-    guidedTour: '/guided-tour',
-    accessCode: '/access-code'
-  },
-  template: {
-    tryInAr: '/try-in-ar.html?viewId=$viewId',
-    modal: {
-      controlRequest: '/control-request-modal.html',
-      tryInAr: '/try-in-ar-modal.html',
-      view: {
-        'panorama': '/panorama-modal.html',
-        'panorama-grid': '/panorama-grid-modal.html',
-        'room-3d': '/room-3d-modal.html',
-        'model': '/model-modal.html'
-      },
-      viewItem: {
-        'nav': '/nav-modal.html',
-        'plane': '/plane-modal.html',
-        'curved-plane': '/curved-plane-modal.html',
-        'texture': '/texture-modal.html',
-        'model': '/item-model-modal.html'
-      },
-      remove: '/remove-modal.html'
-    }
+    index: '/'
   },
   languages: ['en'],
   defaultLanguage: 'en'

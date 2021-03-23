@@ -78,9 +78,9 @@
   "tfs": false,
   "server": {
     "root": "./docs",
-    "path": "/more/",
+    "path": "/terranova/",
     "host": "0.0.0.0",
-    "port": 46321,
+    "port": 49876,
     "log": false
   }
 }
