@@ -2334,7 +2334,7 @@ FlagPipe.meta = {
     });
     KeyboardService.keys$().pipe(operators.filter(function (_) {
       return _this.active;
-    }), operators.takeUntil(this.unsubscribe$)).subscribe(function (keys) {
+    }), operators.throttleTime(200), operators.takeUntil(this.unsubscribe$)).subscribe(function (keys) {
       if (keys.ArrowRight) {
         _this.nextChapter();
       } else if (keys.ArrowLeft) {

@@ -16,6 +16,7 @@ export default class FooterMenuComponent extends Component {
 		});
 		KeyboardService.keys$().pipe(
 			filter(_ => this.active),
+			throttleTime(200),
 			takeUntil(this.unsubscribe$),
 		).subscribe(keys => {
 			if (keys.ArrowRight) {
