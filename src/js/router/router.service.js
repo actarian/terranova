@@ -28,7 +28,7 @@ export class RouterService {
 			useHash: true,
 		}));
 		router.start();
-		console.log(router);
+		// console.log(router);
 		this.router = router;
 		// router.navigate('chi-siamo');
 		return router;

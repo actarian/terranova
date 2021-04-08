@@ -36,7 +36,7 @@ export default class SliderMainComponent extends SliderComponent {
 		const currentChapter = this.items[activeIndex];
 		// console.log('currentChapter', currentChapter, currentChapter.current, this.current, activeIndex);
 		const currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null;
-		console.log('SliderMainComponent.isNegative.currentItem', currentItem);
+		// console.log('SliderMainComponent.isNegative.currentItem', currentItem);
 		return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
 	}
 
@@ -151,14 +151,14 @@ export default class SliderMainComponent extends SliderComponent {
 			if (item.items === subSlider.items) {
 				item.subSlider = subSlider;
 				item.current = subSlider.state.current;
-				console.log('SliderMainComponent.onSubSliderInit', item.current, subSlider.state.current);
+				// console.log('SliderMainComponent.onSubSliderInit', item.current, subSlider.state.current);
 			}
 		});
 		/*
 		const currentChapter = this.items[this.state.current];
 		if (currentChapter.items === subSlider.items) {
 			currentChapter.current = subSlider.state.current;
-			console.log('SliderMainComponent.onSubSliderInit', currentChapter, currentChapter.current, subSlider.state.current);
+			// console.log('SliderMainComponent.onSubSliderInit', currentChapter, currentChapter.current, subSlider.state.current);
 		}
 		*/
 		this.init.next(this);

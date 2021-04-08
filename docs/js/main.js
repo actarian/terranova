@@ -3681,8 +3681,8 @@ function browserPluginFactory(opts, browser) {
     router.usePlugin(browserPluginFactory({
       useHash: true
     }));
-    router.start();
-    console.log(router);
+    router.start(); // console.log(router);
+
     this.router = router; // router.navigate('chi-siamo');
 
     return router;
@@ -4634,6 +4634,7 @@ SliderComponent.meta = {
       }
     });
     this.resize$().pipe(operators.takeUntil(this.unsubscribe$)).subscribe();
+    this.fullscreen$().pipe(operators.takeUntil(this.unsubscribe$)).subscribe();
     /*
     LocationService.onPopState((event) => {
     	console.log('onPopState', event);
@@ -4778,6 +4779,47 @@ SliderComponent.meta = {
 
   _proto.onNavToChapter = function onNavToChapter(index) {
     this.slider.navTo(index);
+  };
+
+  _proto.onClickTerranova = function onClickTerranova() {
+    this.onNavToChapter(0);
+    this.toggleFullScreen();
+  };
+
+  _proto.toggleFullScreen = function toggleFullScreen() {
+    var _getContext2 = rxcomp.getContext(this),
+        node = _getContext2.node;
+
+    var fullScreen = !this.fullScreen;
+
+    if (fullScreen) {
+      if (node.requestFullscreen) {
+        node.requestFullscreen();
+      } else if (node.webkitRequestFullscreen) {
+        node.webkitRequestFullscreen();
+      } else if (node.msRequestFullscreen) {
+        node.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  };
+
+  _proto.fullscreen$ = function fullscreen$() {
+    var _this4 = this;
+
+    return rxjs.fromEvent(document, 'fullscreenchange').pipe(operators.tap(function (_) {
+      var fullScreen = document.fullscreenElement != null;
+      _this4.fullScreen = fullScreen;
+
+      _this4.pushChanges();
+    }));
   };
 
   _createClass(AppComponent, [{
@@ -5123,7 +5165,7 @@ FlagPipe.meta = {
       } // console.log(this.current);
 
     });
-    return this.wheel$(node).pipe(operators.filter(function (_) {
+    this.wheel$(node).pipe(operators.filter(function (_) {
       return _this.active;
     }), operators.takeUntil(this.unsubscribe$)).subscribe();
   };
@@ -5578,15 +5620,14 @@ SliderHeroComponent.meta = {
     this.items.forEach(function (item) {
       if (item.items === subSlider.items) {
         item.subSlider = subSlider;
-        item.current = subSlider.state.current;
-        console.log('SliderMainComponent.onSubSliderInit', item.current, subSlider.state.current);
+        item.current = subSlider.state.current; // console.log('SliderMainComponent.onSubSliderInit', item.current, subSlider.state.current);
       }
     });
     /*
     const currentChapter = this.items[this.state.current];
     if (currentChapter.items === subSlider.items) {
     	currentChapter.current = subSlider.state.current;
-    	console.log('SliderMainComponent.onSubSliderInit', currentChapter, currentChapter.current, subSlider.state.current);
+    	// console.log('SliderMainComponent.onSubSliderInit', currentChapter, currentChapter.current, subSlider.state.current);
     }
     */
 
@@ -5657,8 +5698,8 @@ SliderHeroComponent.meta = {
       }, -1);
       var currentChapter = this.items[activeIndex]; // console.log('currentChapter', currentChapter, currentChapter.current, this.current, activeIndex);
 
-      var currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null;
-      console.log('SliderMainComponent.isNegative.currentItem', currentItem);
+      var currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null; // console.log('SliderMainComponent.isNegative.currentItem', currentItem);
+
       return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
     }
   }]);

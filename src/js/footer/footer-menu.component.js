@@ -39,7 +39,7 @@ export default class FooterMenuComponent extends Component {
 			}
 			// console.log(this.current);
 		});
-		return this.wheel$(node).pipe(
+		this.wheel$(node).pipe(
 			filter(_ => this.active),
 			takeUntil(this.unsubscribe$)
 		).subscribe();

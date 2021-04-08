@@ -91,6 +91,9 @@ export default class AppComponent extends Component {
 		this.resize$().pipe(
 			takeUntil(this.unsubscribe$)
 		).subscribe();
+		this.fullscreen$().pipe(
+			takeUntil(this.unsubscribe$)
+		).subscribe();
 		/*
 		LocationService.onPopState((event) => {
 			console.log('onPopState', event);
@@ -222,6 +225,43 @@ export default class AppComponent extends Component {
 
 	onNavToChapter(index) {
 		this.slider.navTo(index);
+	}
+
+	onClickTerranova() {
+		this.onNavToChapter(0);
+		this.toggleFullScreen();
+	}
+
+	toggleFullScreen() {
+		const { node } = getContext(this);
+		const fullScreen = !this.fullScreen;
+		if (fullScreen) {
+			if (node.requestFullscreen) {
+				node.requestFullscreen();
+			} else if (node.webkitRequestFullscreen) {
+				node.webkitRequestFullscreen();
+			} else if (node.msRequestFullscreen) {
+				node.msRequestFullscreen();
+			}
+		} else {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+		}
+	}
+
+	fullscreen$() {
+		return fromEvent(document, 'fullscreenchange').pipe(
+			tap(_ => {
+				const fullScreen = document.fullscreenElement != null;
+				this.fullScreen = fullScreen;
+				this.pushChanges();
+			}),
+		);
 	}
 
 	get previousChapter() {
