@@ -20,12 +20,17 @@ export default class SliderComponent extends Component {
 		return this.state_;
 	}
 	get current() { return this.getCurrent(); }
-	set current(current) { this.setCurrent(current); }
+	set current(current) {
+		if (current !== this.current) {
+			this.setCurrent(current);
+		}
+	}
 
 	get isVisible() {
 		const { node } = getContext(this);
 		const rect = node.getBoundingClientRect();
-		return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
+		const isVisible = rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
+		return isVisible;
 	}
 
 	getCurrent() {
@@ -37,12 +42,19 @@ export default class SliderComponent extends Component {
 	}
 	setCurrent(current = 0) {
 		// console.log('SliderComponent.setCurrent', current);
+		/*
 		if (!this.state) {
 			this.state = { current: 0 };
 		}
 		if (!this.container) {
 			this.state = { current };
 		} else if (this.state.current !== current) {
+			this.state.current = current;
+			this.change.next(current);
+		}
+		*/
+		if (this.container && this.state.current !== current) {
+			// console.log('SliderComponent.setCurrent', current);
 			this.state.current = current;
 			this.change.next(current);
 		}
@@ -119,7 +131,7 @@ export default class SliderComponent extends Component {
 		}
 		this.items = items;
 		this.state.current = this.resolveInitialIndex();
-		// console.log('SliderComponent.onInit', this.items);
+		// console.log('SliderComponent.onInit', this.current);
 		this.userGesture = false;
 		// this.userGesture$ = new Subject();
 		setTimeout(() => {
@@ -156,20 +168,24 @@ export default class SliderComponent extends Component {
 		).subscribe(keys => {
 			if (this.vertical) {
 				if (keys.ArrowDown) {
+					// console.log('SliderComponent.isVisible', this.isVisible, this.container, this.current)
 					if (this.hasNext()) {
 						this.navTo(this.current + 1);
 					}
 				} else if (keys.ArrowUp) {
+					// console.log('SliderComponent.isVisible', this.isVisible, this.container)
 					if (this.hasPrev()) {
 						this.navTo(this.current - 1);
 					}
 				}
 			} else {
 				if (keys.ArrowRight) {
+					// console.log('SliderComponent.isVisible', this.isVisible, this.container)
 					if (this.hasNext()) {
 						this.navTo(this.current + 1);
 					}
 				} else if (keys.ArrowLeft) {
+					// console.log('SliderComponent.isVisible', this.isVisible, this.container)
 					if (this.hasPrev()) {
 						this.navTo(this.current - 1);
 					}
@@ -461,6 +477,10 @@ export default class SliderComponent extends Component {
 
 	hasNext() {
 		return this.current + 1 < this.items.length;
+	}
+
+	get currentItem() {
+		return (this.items.length > this.current) ? this.items[this.current] : null;
 	}
 
 	getTranslation(node, container) {

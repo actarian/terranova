@@ -1,6 +1,7 @@
 import { getContext } from 'rxcomp';
-import { fromEvent } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { from, fromEvent } from 'rxjs';
+import { startWith, takeUntil, tap } from 'rxjs/operators';
+import { RouterService } from '../router/router.service';
 import SliderComponent from './slider.component';
 
 export default class SliderMainComponent extends SliderComponent {
@@ -28,15 +29,79 @@ export default class SliderMainComponent extends SliderComponent {
 		return slideWidth;
 	}
 
+	get isNegative() {
+		const activeIndex = this.items.reduce((p, c, i) => {
+			return c.activeIndex === i ? i : p;
+		}, -1);
+		const currentChapter = this.items[activeIndex];
+		// console.log('currentChapter', currentChapter, currentChapter.current, this.current, activeIndex);
+		const currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null;
+		console.log('SliderMainComponent.isNegative.currentItem', currentItem);
+		return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
+	}
+
 	onInit() {
 		super.onInit();
+		// console.log('SliderMainComponent.onInit');
+		this.subSlider = null;
 		this.resize$().pipe(
 			takeUntil(this.unsubscribe$)
 		).subscribe(() => this.pushChanges());
-		this.subSlider = null;
+		this.route$().pipe(
+			takeUntil(this.unsubscribe$)
+		).subscribe();
+	}
+
+	onChanges() {
+		this.items.forEach(item => item.activeIndex = this.current);
+	}
+
+	route$() {
+		const state = RouterService.router.getState();
+		return from(RouterService.router).pipe(
+			startWith({ route: state }),
+			tap(({ route, previousRoute }) => {
+				const index = this.items.reduce((p, c, i) => {
+					if (p === -1) {
+						if (route.path.indexOf(c.path) === 1) {
+							return i;
+						} else {
+							return p;
+						}
+					} else {
+						return p;
+					}
+				}, -1);
+				if (index !== -1) {
+					this.current = index;
+				}
+				// console.log('SliderMainComponent.route$', index, route.path);
+			}),
+		);
 	}
 
 	resolveInitialIndex() {
+		const state = RouterService.router.getState();
+		// console.log('SliderMainComponent.resolveInitialIndex', state);
+		const index = this.items.reduce((p, c, i) => {
+			if (p === -1) {
+				if (state.path.indexOf(c.path) === 1) {
+					return i;
+				} else {
+					return p;
+				}
+			} else {
+				return p;
+			}
+		}, -1);
+		let initialIndex = 0;
+		if (index !== -1) {
+			initialIndex = index;
+		}
+		return initialIndex;
+	}
+
+	resolveInitialIndex_() {
 		let initialIndex = 0;
 		const hash = window.location.hash;
 		if (hash) {
@@ -54,7 +119,7 @@ export default class SliderMainComponent extends SliderComponent {
 			if (index !== -1) {
 				initialIndex = index;
 			}
-			console.log('SliderMainComponent.parseLocation.index', hash, initialIndex);
+			// console.log('SliderMainComponent.parseLocation.index', hash, initialIndex);
 		}
 		return initialIndex;
 	}
@@ -78,8 +143,25 @@ export default class SliderMainComponent extends SliderComponent {
 	}
 
 	onSubSliderInit(subSlider, item) {
-		// console.log('SliderMainComponent.onSubSliderInit', subSlider);
+		/*
 		item.subSlider = subSlider;
+		item.current = subSlider.state.current;
+		*/
+		this.items.forEach(item => {
+			if (item.items === subSlider.items) {
+				item.subSlider = subSlider;
+				item.current = subSlider.state.current;
+				console.log('SliderMainComponent.onSubSliderInit', item.current, subSlider.state.current);
+			}
+		});
+		/*
+		const currentChapter = this.items[this.state.current];
+		if (currentChapter.items === subSlider.items) {
+			currentChapter.current = subSlider.state.current;
+			console.log('SliderMainComponent.onSubSliderInit', currentChapter, currentChapter.current, subSlider.state.current);
+		}
+		*/
+		this.init.next(this);
 		// this.pushChanges();
 	}
 

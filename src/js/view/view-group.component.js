@@ -7,12 +7,17 @@ export default class ViewGroupComponent extends Component {
 	}
 
 	onSliderChange(index) {
+		// console.log('ViewGroupComponent.onSliderChange', index);
 		this.current = index;
 		this.pushChanges();
 		this.change.next(index);
 	}
 
 	onSliderInit(slider) {
+		this.current = slider.state.current;
+		this.item.current = this.current;
+		// const currentItem = this.item.items[this.current];
+		// console.log('ViewGroupComponent.onSliderInit', this.current, currentItem);
 		this.init.next(slider);
 	}
 
@@ -44,9 +49,11 @@ ViewGroupComponent.meta = {
 					</div>
 				</div>
 			</div>
+			<!--
 			<div class="slider__bullets">
 				<span class="slider__bullet" [class]="{ active: index === current }" *for="let slide of items; let index = index;" (click)="navTo(index)"></span>
 			</div>
+			-->
 		</div>
 	`
 };

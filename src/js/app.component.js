@@ -1,14 +1,24 @@
 import { Component, getContext } from 'rxcomp';
-import { fromEvent } from 'rxjs';
+import { from, fromEvent } from 'rxjs';
 import { first, takeUntil, tap, throttleTime } from 'rxjs/operators';
 import { Templates } from './api/api.data';
 // import { DATA } from './api/api.data';
 import { ApiService } from './api/api.service';
 import KeyboardService from './keyboard/keyboard.service';
-import LocationService from './location/location.service';
+import { RouterService } from './router/router.service';
 import SliderComponent from './slider/slider.component';
 
 export default class AppComponent extends Component {
+
+	get isSuite() {
+		return this.isSuite_;
+	}
+	set isSuite(isSuite) {
+		if (this.isSuite_ !== isSuite) {
+			this.isSuite_ = isSuite;
+			this.pushChanges();
+		}
+	}
 
 	get showMenu() {
 		return this.showMenu_;
@@ -31,6 +41,7 @@ export default class AppComponent extends Component {
 		// this.items = this.collectItems(this.slides);
 		this.slides = [];
 		this.items = [];
+		this.router = null;
 		ApiService.data$().pipe(
 			first(),
 		).subscribe(data => {
@@ -41,7 +52,22 @@ export default class AppComponent extends Component {
 			setTimeout(() => {
 				html.classList.remove('resizing');
 			});
-			console.log(this.slides);
+			// console.log(this.slides);
+			const router = this.router = RouterService.use$(data);
+			this.setRoute(router.getState());
+			this.route$().pipe(
+				takeUntil(this.unsubscribe$)
+			).subscribe();
+			/*
+			return from(router).pipe(
+				tap(({ route, previousRoute }) => {
+					console.log('route', route, 'previousRoute', previousRoute);
+				}),
+				takeUntil(this.unsubscribe$),
+			).subscribe(e => {
+				console.log(e);
+			});
+			*/
 		});
 		/*
 		this.slides = new Array(4).fill(0).map((_, i) => {
@@ -70,24 +96,49 @@ export default class AppComponent extends Component {
 			console.log('onPopState', event);
 		});
 		*/
+		// console.log('AppComponent.onInit');
+	}
+
+	setRoute(route) {
+		const item = this.items.find(item => route.path === `/${item.path}`);
+		if (item) {
+			document.title = item.documentTitle;
+			this.isSuite = item.template === Templates.Suite;
+		}
+	}
+
+	route$() {
+		return from(RouterService.router).pipe(
+			tap(({ route, previousRoute }) => this.setRoute(route)),
+		);
 	}
 
 	updateLocation() {
-		let url = '', title = '';
+		let path = '', url = '', title = '', isSuite = false;
 		const currentItem = this.currentItem;
 		if (currentItem) {
-			url = currentItem.slug;
-			title = currentItem.documentTitle;
+			path = currentItem.path;
+			// url = currentItem.slug;
+			// title = currentItem.documentTitle;
+			// isSuite = currentItem.template === Templates.Suite;
 		} else {
 			const currentChapter = this.currentChapter;
 			if (currentChapter) {
-				url = currentChapter.slug;
-				title = currentChapter.documentTitle;
+				path = currentChapter.path;
+				// url = currentChapter.slug;
+				// title = currentChapter.documentTitle;
 			}
 		}
-		document.title = title;
-		LocationService.replaceState(null, url);
-		console.log('AppComponent.updateLocation', title, url);
+		// document.title = title;
+		// this.isSuite = isSuite;
+		// const currentChapter = this.currentChapter;
+		// console.log('updateLocation', currentItem.slug, path, currentChapter.slug, currentChapter.current);
+		if (this.router) {
+			this.router.navigate(path);
+			// console.log('router.navigate', path);
+		}
+		// LocationService.replaceState(null, url);
+		// console.log('AppComponent.updateLocation', title, path, url);
 	}
 
 	resize$() {
@@ -118,9 +169,10 @@ export default class AppComponent extends Component {
 	}
 
 	onSliderInit(slider) {
-		// console.log('AppComponent.onSliderInit', slider);
 		this.slider = slider;
 		this.chapterIndex = slider.current;
+		this.itemIndex = slider.items[slider.current].current;
+		// console.log('AppComponent.onSliderInit', slider.items[slider.current].current);
 	}
 
 	onSliderChange(index) {

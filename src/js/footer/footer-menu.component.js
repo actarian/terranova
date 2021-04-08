@@ -19,6 +19,7 @@ export default class FooterMenuComponent extends Component {
 			throttleTime(200),
 			takeUntil(this.unsubscribe$),
 		).subscribe(keys => {
+			// console.log('FooterMenuComponent', keys);
 			if (keys.ArrowRight) {
 				this.nextChapter();
 			} else if (keys.ArrowLeft) {

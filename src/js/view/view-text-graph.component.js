@@ -15,17 +15,29 @@ import { first } from 'rxjs/operators';
 
 export default class ViewTextGraphComponent extends Component {
 
+	get isVisible() {
+		const { node } = getContext(this);
+		const rect = node.getBoundingClientRect();
+		return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
+	}
+
 	onInit() {
 		// console.log('ViewTextGraphComponent');
 		// data = Object.assign(d3.csvParse(await FileAttachment("alphabet.csv").text(), ({letter, frequency}) => ({name: letter, value: +frequency})).sort((a, b) => d3.descending(a.value, b.value)), {format: "%", y: "↑ Frequency"})
 		this.loadChart$().pipe(
 			first(),
 		).subscribe(data => {
-			this.data = this.item.graph.data;
+			// console.log(data);
+			this.data = data; // this.item.graph.data;
+			this.checkChart();
 		});
 	}
 
 	onChanges() {
+		this.checkChart();
+	}
+
+	checkChart() {
 		if (this.chart) {
 			this.chart.remove();
 		}
@@ -33,8 +45,8 @@ export default class ViewTextGraphComponent extends Component {
 			clearTimeout(this.to);
 		}
 		this.to = setTimeout(() => {
-			if (this.isVisible) {
-				const data = this.item.graph.data;
+			if (this.isVisible && this.data) {
+				const data = this.data;
 				const format = this.item.graph.format;
 				const chart = this.chart = this.makeChart(data, format);
 				const { node } = getContext(this);
@@ -44,14 +56,8 @@ export default class ViewTextGraphComponent extends Component {
 		}, 200);
 	}
 
-	get isVisible() {
-		const { node } = getContext(this);
-		const rect = node.getBoundingClientRect();
-		return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
-	}
-
 	loadChart$() {
-		return from(fetch('data/fatturato.csv').then(x => x.text()).then(csv => {
+		return from(fetch(this.item.graph.url).then(x => x.text()).then(csv => {
 			const rows = csv.split('\n');
 			const keys = rows.shift().split(',').map(x => JSON.parse(x));
 			const data = rows.filter(row => row.length > 0).map(row => {
@@ -77,10 +83,12 @@ export default class ViewTextGraphComponent extends Component {
 		// const format = '%';
 		// const y = '↑ Frequency';
 
+		const gap = window.innerWidth / 100 * 1.5;
+
 		const color = '#114895';
 		const width = 600;
 		const height = 500;
-		const margin = { top: 30, right: 0, bottom: 30, left: 40 };
+		const margin = { top: gap, right: 0, bottom: gap, left: 0 };
 
 		const x = scaleBand()
 			.domain(range(data.length))
@@ -134,7 +142,7 @@ export default class ViewTextGraphComponent extends Component {
 			.join('text')
 			.attr('dy', '.75em')
 			.attr('x', (d, i) => x(i) + x.bandwidth() / 2)
-			.attr('y', d => y(d.value) - 30)
+			.attr('y', d => y(d.value) - gap * 2)
 			.attr('opacity', '0')
 			.attr('text-anchor', 'middle')
 			.attr('font-size', '1.8rem')
@@ -144,7 +152,7 @@ export default class ViewTextGraphComponent extends Component {
 			.duration(350)
 			.ease(easeQuadInOut)
 			.delay((d, i) => 450 + i * 50)
-			.attr('y', d => y(d.value) - 20)
+			.attr('y', d => y(d.value) - gap)
 			.attr('opacity', '1')
 
 		svg.append('g')

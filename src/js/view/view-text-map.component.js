@@ -1,9 +1,15 @@
 import { Component } from 'rxcomp';
 
+export const PinModes = {
+	Always: 'always',
+	Over: 'over',
+}
+
 export default class ViewTextMapComponent extends Component {
 
 	onInit() {
 		// console.log('ViewTextMapComponent');
+		this.item.pinMode = this.item.pinMode || PinModes.Always;
 	}
 
 	/*
@@ -22,11 +28,20 @@ ViewTextMapComponent.meta = {
 			<img src="img/circle.png" />
 		</div>
 		-->
-		<div class="background" appear-stagger>
-			<img data-loading="lazy" [src]="item.image" ondragstart="return false;" />
-			<div class="pin" [style]="{ left: pin.x + '%', top: pin.y + '%' }" *for="let pin of item.pins;">
-				<div class="title" *if="pin.title" [innerHTML]="pin.title"></div>
-				<div class="abstract" *if="pin.abstract" [innerHTML]="pin.abstract"></div>
+		<div class="background">
+			<div class="map" [class]="{ 'map--over': item.pinMode === 'over', 'map--always': item.pinMode === 'always' }" appear-stagger>
+				<img data-loading="lazy" [src]="item.image" ondragstart="return false;" />
+				<div class="pin" [style]="{ left: pin.x + '%', top: pin.y + '%' }" *for="let pin of item.pins;">
+					<div class="title" *if="pin.title && !pin.logo" [innerHTML]="pin.title"></div>
+					<div class="abstract" *if="pin.abstract && !pin.logo" [innerHTML]="pin.abstract"></div>
+					<div class="logo" *if="pin.logo"><img [src]="pin.logo" /></div>
+				</div>
+				<!--
+				<div class="pin" [style]="{ left: pin.x + '%', top: pin.y + '%' }" *for="let pin of item.pins;">
+					<div class="title" *if="pin.title" [innerHTML]="pin.title"></div>
+					<div class="abstract" *if="pin.abstract" [innerHTML]="pin.abstract"></div>
+				</div>
+				-->
 			</div>
 		</div>
 		<div class="container-fluid" appear-stagger>

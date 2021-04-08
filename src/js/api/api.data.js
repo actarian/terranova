@@ -66,6 +66,9 @@ export const DATA = [{
 		"abstract": "Il nostro Presente ed il nostro Futuro.",
 		"description": "<p>330 risorse in 10 sedi lavorano insieme per sviluppare e migliorare il prodotto leader per le aziende di Distribuzione e Vendita di Gas ed Energia Elettrica, per il Servizio Idrico, per l’Ambiente e in progetti di Smart Network.</p><p>248 area tecnica funzionale.</p><p>82 management e staff.</p>",
 		"graph": {
+			"format": "%",
+			"url": "data/persone.csv",
+			/*
 			"data": [
 				{ "name": '2009', "value": 25 },
 				{ "name": '2010', "value": 39 },
@@ -79,8 +82,8 @@ export const DATA = [{
 				{ "name": '2018', "value": 260 },
 				{ "name": '2019', "value": 305 },
 				{ "name": '2020', "value": 330 }
-			],
-			"format": "%"
+			]
+			*/
 		}
 	}, {
 		"id": 26,
@@ -90,6 +93,9 @@ export const DATA = [{
 		"abstract": "Negli ultimi anni, Terranova ha avuto una crescita costante sia in fatturato che in numero di risorse.",
 		"description": "<p>Fatturato di oltre € 41 milioni<br>con Ambiente.it e Arcoda per l’anno fiscale 2020.</p>",
 		"graph": {
+			"format": "%M",
+			"url": "data/fatturato.csv",
+			/*
 			"data": [
 				{ "name": '2010', "value": 6 },
 				{ "name": '2011', "value": 9 },
@@ -102,8 +108,8 @@ export const DATA = [{
 				{ "name": '2018', "value": 29 },
 				{ "name": '2019', "value": 36 },
 				{ "name": '2020', "value": 41 }
-			],
-			"format": "%M"
+			]
+			*/
 		}
 	}, {
 		"id": 27,
@@ -111,25 +117,25 @@ export const DATA = [{
 		"name": "Le Sedi",
 		"title": "Le Sedi",
 		"abstract": "Presenti in Italia, Cina, Regno Unito e Uzbekistan.",
-		"image": "img/slides/slide-2-6.png",
+		"image": "img/maps/eurasia.png",
 		"pins": [{
-			"x": 184 / 1920 * 100,
-			"y": 553 / 1110 * 100,
+			"x": 9.84375,
+			"y": 36.58823529,
 			"title": "Regno Unito",
 			"abstract": "Birmingham"
 		}, {
-			"x": 387 / 1920 * 100,
-			"y": 751 / 1110 * 100,
+			"x": 19.47916667,
+			"y": 47.52941176,
 			"title": "Italia",
-			"abstract": "HQ Firenze, Grosseto, Milano, Verona, Roma, Trento, Mestre"
+			"abstract": "HQ Firenze<br>Grosseto, Milano, Verona, Roma, Trento, Mestre"
 		}, {
-			"x": 1102 / 1920 * 100,
-			"y": 748 / 1110 * 100,
+			"x": 47.03125,
+			"y": 41.17647059,
 			"title": "Uzbekistan",
 			"abstract": "Tashkent"
 		}, {
-			"x": 1612 / 1920 * 100,
-			"y": 966 / 1110 * 100,
+			"x": 86.82291667,
+			"y": 50.70588235,
 			"title": "China",
 			"abstract": "Shangai"
 		}]
@@ -173,7 +179,7 @@ export const DATA = [{
 		"logo": "img/loghi/partners/pietro-fiorentini.png",
 		"title": "È partner di Terranova dal 2011",
 		"abstract": "385€ Millioni di fatturato 74€ Millioni EBITDA.",
-		"image": "img/slides/slide-4.png",
+		"image": "img/maps/world.png",
 		"pins": []
 	}, {
 		"id": 32,
@@ -223,29 +229,59 @@ export const DATA = [{
 			"template": Templates.Suite,
 			"name": "Suite Reti",
 			"title": "Suite Reti",
-			"suite": [{
-				"title": "Suite Reti",
+			"suite": {
+				"title": "Suite<b>Reti</b>",
 				"logo": "img/logos/suite-reti-1.png",
 				"items": [{
-					"x": 0,
-					"y": 0,
-					"color": "#ffffff",
-					"title": "Reti Acqua",
+					"x": 0.2,
+					"y": 0.2,
+					"color": "#0f53a1",
+					"title": "Reti<b>Acqua</b>",
 					"logo": "img/logos/suite-reti-1-1.png",
 				}, {
-					"x": 0,
-					"y": 0,
-					"color": "#ffffff",
-					"title": "Reti Wfa",
+					"x": 0.2,
+					"y": 0.4,
+					"color": "#724b7b",
+					"title": "Reti<b>Wfa</b>",
 					"logo": "img/logos/suite-reti-1-2.png",
 				}, {
-					"x": 0,
-					"y": 0,
-					"color": "#ffffff",
-					"title": "Reti Energia",
+					"x": 0.2,
+					"y": 0.6,
+					"color": "#e31d2b",
+					"title": "Reti<b>Energia</b>",
+					"logo": "img/logos/suite-reti-1-3.png",
+				}, {
+					"x": 0.2,
+					"y": 0.8,
+					"color": "#d43b2d",
+					"title": "Reti<b>Idm</b>",
+					"logo": "img/logos/suite-reti-1-3.png",
+				}, {
+					"x": 0.8,
+					"y": 0.2,
+					"color": "#5abdeb",
+					"title": "Reti<b>Gas</b>",
+					"logo": "img/logos/suite-reti-1-3.png",
+				}, {
+					"x": 0.8,
+					"y": 0.4,
+					"color": "#94d4d4",
+					"title": "Reti<b>Cdm</b>",
+					"logo": "img/logos/suite-reti-1-3.png",
+				}, {
+					"x": 0.8,
+					"y": 0.6,
+					"color": "#a4cd4b",
+					"title": "Reti<b>Bi</b>",
+					"logo": "img/logos/suite-reti-1-3.png",
+				}, {
+					"x": 0.8,
+					"y": 0.8,
+					"color": "#c5af32",
+					"title": "Reti<b>Map</b>",
 					"logo": "img/logos/suite-reti-1-3.png",
 				}]
-			}]
+			}
 		}, {
 			"id": 423,
 			"template": Templates.Clients,
@@ -315,25 +351,145 @@ export const DATA = [{
 			"title": "Smart Network",
 			"abstract": "Attraverso l’utilizzo congiunto di varie tecnologie, Terranova offre alle aziende di distribuzione uno strumento completo che supporti tutti i processi connessi allo <b>Smart Metering</b> e <b>Smart Grid</b>.",
 			"description": "<p>Da quelle imposte o incentivate dalla costante regolamentazione dell’Autorità di settore a quelle di gestione dell’infrastruttura, dei dispositivi e dei dati.</p><p>Dopo una prima fase in cui ha supportato la propria clientela nell’implementazione di progetti di Smart Metering nei settori gas, acqua ed elettrico Terranova adesso è pronta ad affrontare la nuova sfida dello Smart Metering di seconda generazione in avvio nel settore elettrico.</p><p>In ambito Smart Grid sono state sviluppate soluzioni per i settori gas ed acqua per la digitalizzazione della rete finalizzata all’efficienza operativa e alla sostenibilità ambientale.</p><p>Negli ultimi anni, inoltre, Terranova ha investito ingenti risorse nello sviluppo di soluzioni a supporto dell’area operations, delle attività di manutenzione, della cartografia e dell’automazione delle squadre di lavoro (Work Force Automation).</p>"
+		}, {
+			"id": 432,
+			"template": Templates.Suite,
+			"name": "Suite Smart Network",
+			"title": "Suite Smart Network",
+			"suite": {
+				"title": "T<b>SN</b>",
+				"items": [{
+					"x": 0.3,
+					"y": 0.2,
+					"color": "#0f53a1",
+					"title": "T<b>SG</b>",
+					"abstract": "La soluzione per la gestione delle smart grid"
+				}, {
+					"x": 0.3,
+					"y": 0.4,
+					"color": "#724b7b",
+					"title": "T<b>PS</b>",
+					"abstract": "La soluzione per la gestione del prepagamento"
+				}, {
+					"x": 0.3,
+					"y": 0.6,
+					"color": "#e31d2b",
+					"title": "T<b>AMM</b>",
+					"abstract": "La soluzione per la telelettura e telegestione degli smart meter"
+				}, {
+					"x": 0.3,
+					"y": 0.8,
+					"color": "#5abdeb",
+					"title": "T<b>WFM</b>",
+					"abstract": "La soluzione per l’automazione delle squadre"
+				}, {
+					"x": 0.7,
+					"y": 0.2,
+					"color": "#94d4d4",
+					"title": "Mbus<b>Library</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.3,
+					"color": "#94d4d4",
+					"title": "Sml<b>Library</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.4,
+					"color": "#94d4d4",
+					"title": "Dlms<b>Library</b>",
+					"abstract": "La soluzione smart per implementare i protocolli di comunicazione"
+				}, {
+					"x": 0.7,
+					"y": 0.6,
+					"color": "#a4cd4b",
+					"title": "T<b>SL</b>",
+					"abstract": "La soluzione smart per l’illuminazione pubblica"
+				}, {
+					"x": 0.7,
+					"y": 0.8,
+					"color": "#a4cd4b",
+					"title": "T<b>AMM Mobile</b>",
+					"abstract": "La soluzione per la gestione on site degli smart meter"
+				}]
+			}
 		}]
 	}, {
 		"id": 44,
 		"template": Templates.Tabs,
 		"name": "Vendita",
 		"items": [{
-			"id": 431,
+			"id": 441,
 			"template": Templates.TextLeft,
 			"name": "Vendita",
 			"title": "Vendita",
 			"abstract": "Terranova supporta società di Vendita, retail ed i grossisti, con una soluzione completa per CRM e Billing.",
 			"description": "La nostra suite per il Mercato della Vendita ha un obiettivo chiaro e concreto: individuare sempre nuove soluzioni e strumenti digitali per consentire ai nostri Clienti di differenziarsi dai propri competitors. Una condizione necessaria per rispondere alle dinamiche di un mercato in movimento continuo."
+		}, {
+			"id": 442,
+			"template": Templates.Suite,
+			"name": "Suite per la vendita",
+			"title": "Suite per la vendita",
+			"suite": {
+				"title": "4<b>Utility</b>",
+				"items": [{
+					"x": 0.3,
+					"y": 0.2,
+					"color": "#0f53a1",
+					"title": "Customer<b>Next</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.35,
+					"color": "#724b7b",
+					"title": "<b>Trimp</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.5,
+					"color": "#e31d2b",
+					"title": "<b>Payments</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.65,
+					"color": "#5abdeb",
+					"title": "TC2<b>Next</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.8,
+					"color": "#5abdeb",
+					"title": "Partner<b>Next</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.2,
+					"color": "#94d4d4",
+					"title": "Datamax<b>Next</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.35,
+					"color": "#a4cd4b",
+					"title": "<b>Lybra</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.5,
+					"color": "#a4cd4b",
+					"title": "<b>Bit</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.65,
+					"color": "#a4cd4b",
+					"title": "4<b>Cash</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.8,
+					"color": "#a4cd4b",
+					"title": "Reseller<b>Next</b>",
+				}]
+			}
 		}]
 	}, {
 		"id": 45,
 		"template": Templates.Tabs,
 		"name": "Settore Idrico",
 		"items": [{
-			"id": 431,
+			"id": 451,
 			"template": Templates.TextLeft,
 			"name": "Settore Idrico",
 			"title": "Settore Idrico",
@@ -351,18 +507,121 @@ export const DATA = [{
 			}, {
 				"title": "Attenzione per l’utente"
 			}]
+		}, {
+			"id": 452,
+			"template": Templates.Suite,
+			"name": "Reti Acqua",
+			"title": "Reti Acqua",
+			"suite": {
+				"title": "Reti<b>Acqua</b>",
+				"items": [{
+					"x": 0.3,
+					"y": 0.2,
+					"color": "#0f53a1",
+					"title": "Reti<b>Channel</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.4,
+					"color": "#724b7b",
+					"title": "Reti<b>Bi</b>",
+				}, {
+					"x": 0.3,
+					"y": 0.6,
+					"color": "#e31d2b",
+					"title": "Reti<b>Wfa</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.2,
+					"color": "#5abdeb",
+					"title": "Reti<b>Amm</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.4,
+					"color": "#5abdeb",
+					"title": "Reti<b>Amm Mobile</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.6,
+					"color": "#94d4d4",
+					"title": "Reti<b>SmartGrid</b>",
+				}, {
+					"x": 0.7,
+					"y": 0.8,
+					"color": "#a4cd4b",
+					"title": "Reti<b>Map</b>",
+				}]
+			}
 		}]
 	}, {
 		"id": 46,
 		"template": Templates.Tabs,
 		"name": "Gestione Ambientale",
 		"items": [{
-			"id": 431,
+			"id": 461,
 			"template": Templates.TextLeft,
 			"name": "Gestione Ambientale",
 			"title": "Gestione Ambientale",
 			"abstract": "Una gamma completa di soluzioni software per soddisfare le esigenze di tutta la filiera della gestione dei rifiuti.",
 			"description": "<p>La suite ECOS è una collana di moduli software, sempre aggiornati secondo le normative vigenti, progettata per l’informatizzazione dei processi gestionali di tutte le aziende della filiera ambientale.</p>"
+		}, {
+			"id": 462,
+			"template": Templates.Suite,
+			"name": "La Suite Ecos",
+			"title": "La Suite Ecos",
+			"suite": {
+				"title": "Suite<b>Ecos</b>",
+				"items": [{
+					"x": 0.3,
+					"y": 0.2,
+					"color": "#0f53a1",
+					"title": "<b>Commerciale Amministratico e Fatturazione</b>"
+				}, {
+					"x": 0.3,
+					"y": 0.35,
+					"color": "#724b7b",
+					"title": "<b>Logistica</b>"
+				}, {
+					"x": 0.3,
+					"y": 0.5,
+					"color": "#e31d2b",
+					"title": "<b>Sicurezza e Tools</b>"
+				}, {
+					"x": 0.3,
+					"y": 0.65,
+					"color": "#5abdeb",
+					"title": "<b>Digitalizzazione</b>"
+				}, {
+					"x": 0.3,
+					"y": 0.8,
+					"color": "#94d4d4",
+					"title": "<b>Movimentazione e Automazione Impianti</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.2,
+					"color": "#94d4d4",
+					"title": "<b>Tariffa</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.35,
+					"color": "#94d4d4",
+					"title": "<b>Crm</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.5,
+					"color": "#a4cd4b",
+					"title": "<b>Verticali</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.65,
+					"color": "#a4cd4b",
+					"title": "<b>Web</b>"
+				}, {
+					"x": 0.7,
+					"y": 0.8,
+					"color": "#a4cd4b",
+					"title": "<b>Highlights</b>"
+				}]
+			}
 		}]
 	}]
 }, {
@@ -371,8 +630,46 @@ export const DATA = [{
 	"name": "Clienti",
 	"title": "Clienti",
 	"abstract": "I nostri principali Clienti nel Mondo",
-	"image": "img/slides/slide-4.png",
+	"image": "img/maps/world.png",
+	"pinMode": "over",
 	"pins": [
+		{ "x": 49.47916667, "y": 21.75, "title": "Ace Gas", "logo": "img/loghi/clients/acegas.png" },
+		{ "x": 43.02083333, "y": 25, "title": "Aclara", "logo": "img/loghi/clients/aclara.png" },
+		{ "x": 52.29166667, "y": 23.625, "title": "Aem", "logo": "img/loghi/clients/aem.png" },
+		{ "x": 47.70833333, "y": 24.125, "title": "Centria Gas", "logo": "img/loghi/clients/centria-gas.png" },
+		{ "x": 44.32291667, "y": 18.875, "title": "Data Communication Company", "logo": "img/loghi/clients/data-communication-company.png" },
+		{ "x": 47.65625, "y": 18.875, "title": "Devolo Network", "logo": "img/loghi/clients/devolo-network.png" },
+		/*
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Devolo", "logo": "img/loghi/clients/devolo.png" },
+		*/
+		{ "x": 77.55208333, "y": 50.375, "title": "Edmi", "logo": "img/loghi/clients/edmi.png" },
+		{ "x": 48.33333333, "y": 25, "title": "Enel", "logo": "img/loghi/clients/enel.png" },
+		{ "x": 47.5, "y": 22.75, "title": "Erogasmet", "logo": "img/loghi/clients/erogasmet.png" },
+		{ "x": 50.83333333, "y": 18, "title": "Eso", "logo": "img/loghi/clients/eso.png" },
+		{ "x": 49.63541667, "y": 25.875, "title": "Gas Rete", "logo": "img/loghi/clients/gas-rete.png" },
+		{ "x": 46.04166667, "y": 20.625, "title": "Grdf", "logo": "img/loghi/clients/grdf.png" },
+		{ "x": 79.16666667, "y": 34.5, "title": "Holley", "logo": "img/loghi/clients/holley.png" },
+		{ "x": 61.51041667, "y": 27.5, "title": "Hudugazta Minot", "logo": "img/loghi/clients/hudugazta-minot.png" },
+		{ "x": 48.22916667, "y": 20.875, "title": "Infrastrutture Distribuzione Gas", "logo": "img/loghi/clients/infrastrutture-distribuzione-gas.png" },
+		{ "x": 46.40625, "y": 23.625, "title": "IReti", "logo": "img/loghi/clients/ireti.png" },
+		{ "x": 55.10416667, "y": 27.125, "title": "Kohler", "logo": "img/loghi/clients/kohler.png" },
+		{ "x": 43.64583333, "y": 18.375, "title": "Landis Gyr", "logo": "img/loghi/clients/landis-gyr.png" },
+		{ "x": 48.54166667, "y": 22, "title": "Megareti", "logo": "img/loghi/clients/megareti.png" },
+		/*
+		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Metrogas", "logo": "img/loghi/clients/metrogas-2.png" },
+		*/
+		{ "x": 23.22916667, "y": 70, "title": "Metrogas", "logo": "img/loghi/clients/metrogas.png" },
+		{ "x": 42.1875, "y": 26.625, "title": "Naturgy", "logo": "img/loghi/clients/naturgy.png" },
+		/*
+		{ "x": 0, "y": 0, "title": "Pietro Fiorentini", "logo": "img/loghi/clients/pietro-fiorentini.png" },
+		*/
+		{ "x": 47.13541667, "y": 23.25, "title": "RetiPiù", "logo": "img/loghi/clients/retipiu.png" },
+		{ "x": 80.52083333, "y": 33.375, "title": "Shangai Fiorentini", "logo": "img/loghi/clients/shangai-fiorentini.png" },
+		{ "x": 53.4375, "y": 22.375, "title": "Texnopark", "logo": "img/loghi/clients/texnopark.png" },
+		{ "x": 44.89583333, "y": 19.75, "title": "Toshiba", "logo": "img/loghi/clients/toshiba.png" },
+		{ "x": 81.40625, "y": 32.375, "title": "XXX", "logo": "img/loghi/clients/xxx.png" },
+		{ "x": 79.16666667, "y": 27.125, "title": "YYY", "logo": "img/loghi/clients/yyy.png" },
+		/*
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Acsm Agam", "logo": "img/suite/reti/clienti/acsm agam.png" },
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Adrigas", "logo": "img/suite/reti/clienti/adrigas.png" },
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Aemme Linea Distribuzione", "logo": "img/suite/reti/clienti/aemme-linea-distribuzione.png" },
@@ -422,5 +719,6 @@ export const DATA = [{
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Stadtwerke Asm", "logo": "img/suite/reti/clienti/stadtwerke asm.png" },
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Tea Sei", "logo": "img/suite/reti/clienti/tea sei.png" },
 		{ "x": Math.random() * 1920 / 1920 * 100, "y": (400 + Math.random() * 710) / 1110 * 100, "title": "Tecniconsul", "logo": "img/suite/reti/clienti/tecni consul.png" }
+		*/
 	]
 }];

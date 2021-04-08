@@ -2,11 +2,12 @@
 <!-- @@block = main-->
 <div class="page">
 
-	<div class="circle">
+	<div class="circle" [class]="{ 'circle--suite': isSuite }">
 		<img src="img/circle.png" />
 	</div>
 
-	<div class="slider__container slider--main" slider-main [items]="slides" (init)="onSliderInit($event)" (change)="onSliderChange($event)" (subChange)="onSubSliderChange($event)"><!--  [autoplay]="5000" -->
+	<div class="slider__container slider--main" slider-main [items]="slides" (init)="onSliderInit($event)" (change)="onSliderChange($event)" (subChange)="onSubSliderChange($event)">
+		<!--  [autoplay]="5000" -->
 		<div class="slider__wrapper" [style]="wrapperStyle">
 			<div class="slider__inner" [style]="innerStyle">
 				<div class="slider__slide" *for="let item of items; let index = index;">
@@ -24,8 +25,8 @@
 				</div>
 			</div>
 		</div>
-		<div *for="let item of items; let index = index;">
-			<div class="slider__bullets" [class]="{ 'enter': index === current }" *if="item.subSlider">
+		<div [class]="{ 'negative': isNegative }" *for="let item of items; let index = index;">
+			<div class="slider__bullets" [class]="{ 'enter': index === item.activeIndex }" *if="item.subSlider">
 				<span class="slider__bullet" *for="let slide of item.subSlider.items; let subSliderIndex = index;" [class]="{ active: subSliderIndex === item.subSlider.current }" (click)="item.subSlider.navTo(subSliderIndex)"></span>
 			</div>
 		</div>

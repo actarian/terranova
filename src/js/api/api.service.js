@@ -11,12 +11,14 @@ export class ApiService {
 		);
 	}
 
-	static setSlugs(items, parentSlug = '', parentDocumentTitle = '') {
+	static setSlugs(items, parentPath = '', parentSlug = '', parentDocumentTitle = '') {
 		items.forEach(item => {
-			item.slug = parentSlug + '/' + LocationService.toSlug(item.name);
+			item.path = (parentPath !== '' ? parentPath + '-' : '') + LocationService.toSlug(item.name);
+			item.slug = parentSlug + '/' + item.path;
 			item.documentTitle = parentDocumentTitle + (parentDocumentTitle !== '' ? ' - ' : '') + item.name;
+			// console.log(item.path);
 			if (item.items) {
-				this.setSlugs(item.items, item.slug, item.documentTitle);
+				this.setSlugs(item.items, item.path, item.slug, item.documentTitle);
 			}
 		});
 		return items;

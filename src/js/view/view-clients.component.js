@@ -12,9 +12,11 @@ ViewClientsComponent.meta = {
 	selector: '[view-clients]',
 	inputs: ['item'],
 	template: /* html */ `
+		<!--
 		<div class="background">
 			<img data-loading="lazy" [src]="item.image" ondragstart="return false;" />
 		</div>
+		-->
 		<!--
 		<div class="container">
 			<div class="title" [innerHTML]="item.title"></div>
