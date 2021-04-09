@@ -5826,7 +5826,7 @@ SliderHeroComponent.meta = {
 
       var currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null; // console.log('SliderMainComponent.isNegative.currentItem', currentItem);
 
-      return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
+      return currentItem.template === 'tabs' || currentItem.image != null && currentItem.template !== 'textMap'; // return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
     }
   }]);
 
@@ -6057,7 +6057,7 @@ ViewClientsComponent.meta = {
     key: "isNegative",
     get: function get() {
       var currentItem = this.item.items[this.current];
-      return currentItem.image != null && currentItem.template !== 'textMap';
+      return currentItem.template === 'tabs' || currentItem.image != null && currentItem.template !== 'textMap';
     }
   }]);
 

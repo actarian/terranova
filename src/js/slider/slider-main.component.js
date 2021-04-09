@@ -37,7 +37,8 @@ export default class SliderMainComponent extends SliderComponent {
 		// console.log('currentChapter', currentChapter, currentChapter.current, this.current, activeIndex);
 		const currentItem = currentChapter.items ? currentChapter.items[currentChapter.current] : null;
 		// console.log('SliderMainComponent.isNegative.currentItem', currentItem);
-		return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
+		return currentItem.template === 'tabs' || (currentItem.image != null && currentItem.template !== 'textMap');
+		// return currentItem && currentItem.image != null && currentItem.template !== 'textMap';
 	}
 
 	onInit() {

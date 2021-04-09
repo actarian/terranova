@@ -23,7 +23,7 @@ export default class ViewGroupComponent extends Component {
 
 	get isNegative() {
 		const currentItem = this.item.items[this.current];
-		return currentItem.image != null && currentItem.template !== 'textMap';
+		return currentItem.template === 'tabs' || (currentItem.image != null && currentItem.template !== 'textMap');
 	}
 }
 
