@@ -3468,18 +3468,22 @@ img {
       opacity: 0;
       transition: all ease-in-out 350ms;
       pointer-events: none; }
-    .view--text-map .map.map--over .pin:hover:after {
-      height: 9rem;
-      opacity: 1; }
-    .view--text-map .map.map--over .pin:hover > .title {
-      transform: translateX(1rem) translateY(-9.4rem);
-      opacity: 1; }
-    .view--text-map .map.map--over .pin:hover > .abstract {
-      transform: translateX(1rem) translateY(-9.4rem);
-      opacity: 1; }
-    .view--text-map .map.map--over .pin:hover > .logo {
-      transform: translateX(1rem) translateY(-9rem);
-      opacity: 1; }
+    .view--text-map .map.map--over .pin:hover {
+      z-index: 1000; }
+      .view--text-map .map.map--over .pin:hover:after {
+        height: 9rem;
+        opacity: 1; }
+      .view--text-map .map.map--over .pin:hover > .title {
+        text-shadow: 0 3px 3px rgba(255, 255, 255, 0.7);
+        transform: translateX(1rem) translateY(-9.4rem);
+        opacity: 1; }
+      .view--text-map .map.map--over .pin:hover > .abstract {
+        text-shadow: 0 3px 3px rgba(255, 255, 255, 0.7);
+        transform: translateX(1rem) translateY(-9.4rem);
+        opacity: 1; }
+      .view--text-map .map.map--over .pin:hover > .logo {
+        transform: translateX(1rem) translateY(-9rem);
+        opacity: 1; }
   @media screen {
     .view--text-map .appear-stagger:not(.print).appeared > *:nth-child(1) {
       animation-delay: 0.175s; }

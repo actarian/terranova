@@ -228,7 +228,108 @@ var DATA = [{
     "name": "Pietro Fiorentini nel mondo",
     "logo": "img/loghi/partners/pietro-fiorentini.png",
     "image": "img/maps/world.png",
-    "pins": []
+    "pinMode": "over",
+    "pins": [{
+      "x": 47.86458333,
+      "y": 22.625,
+      "title": "Italia",
+      "abstract": "HQ Arcugnano (Vicenza)"
+    }, {
+      "x": 48.22916667,
+      "y": 25,
+      "title": "Italia",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 12.65625,
+      "y": 37.625,
+      "title": "Messico",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 15.57291667,
+      "y": 25.375,
+      "title": "USA",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 47.23958333,
+      "y": 29.125,
+      "title": "Tunisia",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 44.84375,
+      "y": 30.875,
+      "title": "Algeria",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 45.36458333,
+      "y": 22.25,
+      "title": "Francia",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 50.78125,
+      "y": 21.375,
+      "title": "Ungheria",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 76.45833333,
+      "y": 31.75,
+      "title": "Cina",
+      "abstract": "Stabilimento produttivo"
+    }, {
+      "x": 20.20833333,
+      "y": 30,
+      "title": "USA",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 44.27083333,
+      "y": 18.75,
+      "title": "Regno Unito",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 46.82291667,
+      "y": 20.125,
+      "title": "Germania",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 45.83333333,
+      "y": 18.875,
+      "title": "Paesi Bassi",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 48.54166667,
+      "y": 20.625,
+      "title": "Austria",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 49.63541667,
+      "y": 18.625,
+      "title": "Polonia",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 54.79166667,
+      "y": 26.75,
+      "title": "Turchia",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 58.64583333,
+      "y": 37.625,
+      "title": "Arabia Saudita",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 62.70833333,
+      "y": 22.25,
+      "title": "Kazakhstan",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 68.95833333,
+      "y": 39.875,
+      "title": "India",
+      "abstract": "Ufficio commerciale"
+    }, {
+      "x": 77.5,
+      "y": 53.25,
+      "title": "Malesia",
+      "abstract": "Ufficio commerciale"
+    }]
   }, {
     "id": 34,
     "template": Templates.TextLeft,
