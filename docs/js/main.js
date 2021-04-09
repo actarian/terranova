@@ -217,36 +217,68 @@ var DATA = [{
     "image": "img/02-i-partners/slide-02-00.jpg"
   }, {
     "id": 32,
+    "template": Templates.TextLeft,
+    "name": "Pietro Fiorentini è partner di Terranova",
+    "title": "Pietro Fiorentini è partner di Terranova",
+    "abstract": "Dal 2011 385€ Milioni di fatturato e 74€ Milioni EBITDA.",
+    "logo": "img/loghi/partners/pietro-fiorentini.png"
+  }, {
+    "id": 33,
     "template": Templates.TextMap,
-    "name": "Pietro Fiorentini",
+    "name": "Pietro Fiorentini nel mondo",
     "logo": "img/loghi/partners/pietro-fiorentini.png",
-    "title": "È partner di Terranova dal 2011",
-    "abstract": "385€ Milioni di fatturato 74€ Milioni EBITDA.",
     "image": "img/maps/world.png",
     "pins": []
   }, {
-    "id": 32,
-    "template": Templates.TextCenter,
+    "id": 34,
+    "template": Templates.TextLeft,
     "name": "Arcoda",
     "title": "Terranova è partner di Arcoda",
     "abstract": "di cui detiene il 60% del capitale",
     "logo": "img/loghi/partners/arcoda.png",
-    "description": "Arcoda sviluppa soluzioni tecnologiche vincenti, progettate per chi è chiamato a gestire quotidianamente forza lavoro sul territorio.",
-    "list": [{
-      "title": "Tenacia"
-    }]
+    "description": "Arcoda sviluppa soluzioni tecnologiche vincenti, progettate per chi è chiamato a gestire quotidianamente forza lavoro sul territorio."
   }, {
-    "id": 32,
-    "template": Templates.TextCenter,
+    "id": 35,
+    "template": Templates.TextLeft,
     "name": "Ambiente.it",
     "title": "Terranova è partner di Ambiente.it",
     "abstract": "di cui detiene il 60% del capitale",
     "logo": "img/loghi/partners/ambiente.it.png",
-    "description": "<p>Ambiente.it da quasi trent’anni sviluppa software gestionali ed eroga servizi professionali per la filiera dei rifiuti speciali e urbani.</p><p>Si propone al mercato con un servizio completo per la informatizzazione gestionale di tutte le problematiche ambientali, offrendo ai propri clienti soluzioni software, informazione, formazione, consulenza e assistenza.</p><p>Ambiente.it supporta oltre mille clienti in tutta Italia; è presente in grandi realtà industriali così come nei Consorzi e nelle Utility di igiene urbana, ed in centinaia di medie e piccole imprese in tutta Italia, con migliaia di utenti che utilizzano giornalmente i suoi software.</p>",
-    "list": [{
-      "title": "Tenacia"
-    }]
+    "description": "<p>Ambiente.it da quasi trent’anni sviluppa software gestionali ed eroga servizi professionali per la filiera dei rifiuti speciali e urbani.</p><p>Si propone al mercato con un servizio completo per la informatizzazione gestionale di tutte le problematiche ambientali, offrendo ai propri clienti soluzioni software, informazione, formazione, consulenza e assistenza.</p><p>Ambiente.it supporta oltre mille clienti in tutta Italia; è presente in grandi realtà industriali così come nei Consorzi e nelle Utility di igiene urbana, ed in centinaia di medie e piccole imprese in tutta Italia, con migliaia di utenti che utilizzano giornalmente i suoi software.</p>"
+  }
+  /*, {
+  "id": 32,
+  "template": Templates.TextMap,
+  "name": "Pietro Fiorentini",
+  "logo": "img/loghi/partners/pietro-fiorentini.png",
+  "title": "È partner di Terranova dal 2011",
+  "abstract": "385€ Milioni di fatturato 74€ Milioni EBITDA.",
+  "image": "img/maps/world.png",
+  "pins": []
+  }, {
+  "id": 32,
+  "template": Templates.TextCenter,
+  "name": "Arcoda",
+  "title": "Terranova è partner di Arcoda",
+  "abstract": "di cui detiene il 60% del capitale",
+  "logo": "img/loghi/partners/arcoda.png",
+  "description": "Arcoda sviluppa soluzioni tecnologiche vincenti, progettate per chi è chiamato a gestire quotidianamente forza lavoro sul territorio.",
+  "list": [{
+  	"title": "Tenacia"
   }]
+  }, {
+  "id": 32,
+  "template": Templates.TextCenter,
+  "name": "Ambiente.it",
+  "title": "Terranova è partner di Ambiente.it",
+  "abstract": "di cui detiene il 60% del capitale",
+  "logo": "img/loghi/partners/ambiente.it.png",
+  "description": "<p>Ambiente.it da quasi trent’anni sviluppa software gestionali ed eroga servizi professionali per la filiera dei rifiuti speciali e urbani.</p><p>Si propone al mercato con un servizio completo per la informatizzazione gestionale di tutte le problematiche ambientali, offrendo ai propri clienti soluzioni software, informazione, formazione, consulenza e assistenza.</p><p>Ambiente.it supporta oltre mille clienti in tutta Italia; è presente in grandi realtà industriali così come nei Consorzi e nelle Utility di igiene urbana, ed in centinaia di medie e piccole imprese in tutta Italia, con migliaia di utenti che utilizzano giornalmente i suoi software.</p>",
+  "list": [{
+  	"title": "Tenacia"
+  }]
+  }*/
+  ]
 }, {
   "id": 4,
   "template": Templates.Group,
@@ -9641,7 +9673,7 @@ ViewTextLeftComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" *if=\"!item.image\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"logo\" *if=\"item.logo\"><img [src]=\"item.logo\" /></div>\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var PinModes = {
   Always: 'always',
   Over: 'over'
@@ -9694,7 +9726,7 @@ ViewTextRightComponent.meta = {
   inputs: ['item'],
   template:
   /* html */
-  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+  "\n\t\t<div class=\"background\" *if=\"item.image\">\n\t\t\t<img data-loading=\"lazy\" [src]=\"item.image\" ondragstart=\"return false;\" />\n\t\t</div>\n\t\t<!--\n\t\t<div class=\"circle\" [class]=\"{ dimmed: item.image }\">\n\t\t\t<img src=\"img/circle.png\" />\n\t\t</div>\n\t\t-->\n\t\t<div class=\"container-fluid\" [class]=\"{ 'negative': item.image != null }\" >\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-6\">\n\t\t\t\t\t<div class=\"logo\" *if=\"item.logo\"><img [src]=\"item.logo\" /></div>\n\t\t\t\t\t<ul class=\"listing--values\" appear-stagger *if=\"item.list && item.list.length\">\n\t\t\t\t\t\t<li class=\"listing__item\" *for=\"let listItem of item.list\"><span [innerHTML]=\"listItem.title\"></span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6\" appear-stagger>\n\t\t\t\t\t<div class=\"title\" [innerHTML]=\"item.title\"></div>\n\t\t\t\t\t<div class=\"abstract\" *if=\"item.abstract\" [innerHTML]=\"item.abstract\"></div>\n\t\t\t\t\t<div class=\"description\" *if=\"item.description\" [innerHTML]=\"item.description\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
 };var ViewTextTwoColsComponent = /*#__PURE__*/function (_Component) {
   _inheritsLoose(ViewTextTwoColsComponent, _Component);
 

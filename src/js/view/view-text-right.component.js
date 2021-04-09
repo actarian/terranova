@@ -23,6 +23,7 @@ ViewTextRightComponent.meta = {
 		<div class="container-fluid" [class]="{ 'negative': item.image != null }" >
 			<div class="row">
 				<div class="col-md-6">
+					<div class="logo" *if="item.logo"><img [src]="item.logo" /></div>
 					<ul class="listing--values" appear-stagger *if="item.list && item.list.length">
 						<li class="listing__item" *for="let listItem of item.list"><span [innerHTML]="listItem.title"></span></li>
 					</ul>
