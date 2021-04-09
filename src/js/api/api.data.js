@@ -278,7 +278,7 @@ export const DATA = [{
 			"title": "Distribuzione",
 			"abstract": "Il settore storico di Terranova, che la vede primeggiare a livello internazionale con un’importante quota di mercato.",
 			"description": "Negli ultimi anni, inoltre, Terranova ha investito ingenti risorse nello sviluppo di soluzioni a supporto dell’area operations, delle attività di manutenzione, della cartografia e dell’automazione delle squadre di lavoro (Work Force Automation).",
-			// "image": "img/03-le-soluzioni/slide-03-01-01.jpg"
+			"image": "img/03-le-soluzioni/slide-03-01-01.jpg"
 		}, {
 			"id": 422,
 			"template": Templates.Suite,
@@ -405,7 +405,8 @@ export const DATA = [{
 			"name": "Smart Network",
 			"title": "Smart Network",
 			"abstract": "Attraverso l’utilizzo congiunto di varie tecnologie, Terranova offre alle aziende di distribuzione uno strumento completo che supporti tutti i processi connessi allo <b>Smart Metering</b> e <b>Smart Grid</b>.",
-			"description": "<p>Da quelle imposte o incentivate dalla costante regolamentazione dell’Autorità di settore a quelle di gestione dell’infrastruttura, dei dispositivi e dei dati.</p><p>Dopo una prima fase in cui ha supportato la propria clientela nell’implementazione di progetti di Smart Metering nei settori gas, acqua ed elettrico Terranova adesso è pronta ad affrontare la nuova sfida dello Smart Metering di seconda generazione in avvio nel settore elettrico.</p><p>In ambito Smart Grid sono state sviluppate soluzioni per i settori gas ed acqua per la digitalizzazione della rete finalizzata all’efficienza operativa e alla sostenibilità ambientale.</p><p>Negli ultimi anni, inoltre, Terranova ha investito ingenti risorse nello sviluppo di soluzioni a supporto dell’area operations, delle attività di manutenzione, della cartografia e dell’automazione delle squadre di lavoro (Work Force Automation).</p>"
+			"description": "<p>Da quelle imposte o incentivate dalla costante regolamentazione dell’Autorità di settore a quelle di gestione dell’infrastruttura, dei dispositivi e dei dati.</p><p>Dopo una prima fase in cui ha supportato la propria clientela nell’implementazione di progetti di Smart Metering nei settori gas, acqua ed elettrico Terranova adesso è pronta ad affrontare la nuova sfida dello Smart Metering di seconda generazione in avvio nel settore elettrico.</p><p>In ambito Smart Grid sono state sviluppate soluzioni per i settori gas ed acqua per la digitalizzazione della rete finalizzata all’efficienza operativa e alla sostenibilità ambientale.</p><p>Negli ultimi anni, inoltre, Terranova ha investito ingenti risorse nello sviluppo di soluzioni a supporto dell’area operations, delle attività di manutenzione, della cartografia e dell’automazione delle squadre di lavoro (Work Force Automation).</p>",
+			"image": "img/03-le-soluzioni/slide-03-01-02.jpg"
 		}, {
 			"id": 432,
 			"template": Templates.Suite,
@@ -487,7 +488,8 @@ export const DATA = [{
 			"name": "Vendita",
 			"title": "Vendita",
 			"abstract": "Terranova supporta società di Vendita, retail ed i grossisti, con una soluzione completa per CRM e Billing.",
-			"description": "La nostra suite per il Mercato della Vendita ha un obiettivo chiaro e concreto: individuare sempre nuove soluzioni e strumenti digitali per consentire ai nostri Clienti di differenziarsi dai propri competitors. Una condizione necessaria per rispondere alle dinamiche di un mercato in movimento continuo."
+			"description": "La nostra suite per il Mercato della Vendita ha un obiettivo chiaro e concreto: individuare sempre nuove soluzioni e strumenti digitali per consentire ai nostri Clienti di differenziarsi dai propri competitors. Una condizione necessaria per rispondere alle dinamiche di un mercato in movimento continuo.",
+			"image": "img/03-le-soluzioni/slide-03-01-03.jpg"
 		}, {
 			"id": 442,
 			"template": Templates.Suite,
@@ -579,7 +581,8 @@ export const DATA = [{
 				"title": "Flessibilità ed adattabilità"
 			}, {
 				"title": "Attenzione per l’utente"
-			}]
+			}],
+			"image": "img/03-le-soluzioni/slide-03-01-04.jpg"
 		}, {
 			"id": 452,
 			"template": Templates.Suite,
@@ -644,7 +647,8 @@ export const DATA = [{
 			"name": "Gestione Ambientale",
 			"title": "Gestione Ambientale",
 			"abstract": "Una gamma completa di soluzioni software per soddisfare le esigenze di tutta la filiera della gestione dei rifiuti.",
-			"description": "<p>La suite ECOS è una collana di moduli software, sempre aggiornati secondo le normative vigenti, progettata per l’informatizzazione dei processi gestionali di tutte le aziende della filiera ambientale.</p>"
+			"description": "<p>La suite ECOS è una collana di moduli software, sempre aggiornati secondo le normative vigenti, progettata per l’informatizzazione dei processi gestionali di tutte le aziende della filiera ambientale.</p>",
+			"image": "img/03-le-soluzioni/slide-03-01-05.jpg"
 		}, {
 			"id": 462,
 			"template": Templates.Suite,
